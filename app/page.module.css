@@ -1,1 +1,7 @@
 /* Update CSS after installing React Bootstrap */
+.introHeaderContainer {
+    background-color: #fbf7f4;
+    padding: 5em;
+    min-height: calc(100vh - 10em);
+    min-width: 90vw;
+}

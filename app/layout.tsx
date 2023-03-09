@@ -1,3 +1,6 @@
+import 'bootstrap-icons/font/bootstrap-icons.css';
+import './globals.css';
+
 export const metadata = {
   title: 'Next Book',
   description: 'What are you reading?',
