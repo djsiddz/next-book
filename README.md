@@ -13,11 +13,11 @@ What's the next book I should read? Your personal book collection management app
 
 - Use TypeScript with NextJS & ReactJS to build a personal book collection management app.
 - Allow adding your book collection, along with other reading details:
-    - Reading Status: Read/In Progress/Not Started
-    - Format: Physical Book, PDF, Kindle Edition
-    - Purchase Details (Date, Store, Price, Gifted, etc)
-    - Capture reading progress
-    - Allow adding custom summary, when marking a book as completed
+  - Reading Status: Read/In Progress/Not Started
+  - Format: Physical Book, PDF, Kindle Edition
+  - Purchase Details (Date, Store, Price, Gifted, etc)
+  - Capture reading progress
+  - Allow adding custom summary, when marking a book as completed
 - Based on the data entered, it can show various stats
 - The app can also randomly recommend a new book to start, if you are confused which one to pick up next.
 
@@ -28,23 +28,24 @@ Near Future Scope:
 
 ## Pages
 
-- Dashboard
-    - Currently Reading
-    - Recently completed
-    - Recently purchased/acquired
-    - Stats
-    - Add New Book
+- Dashboard (/dashboard)
+  - Currently Reading
+  - Recently completed
+  - Recently purchased/acquired
+  - Stats
+  - Add New Book
 - My Collection
-    - Filter options
+  - Filter options
 - Add New Book
 - Edit Book Details
-    - Update Book reading progress
-    - Capture Personal Notes or Book Summary or Review
-- Login
+  - Update Book reading progress
+  - Capture Personal Notes or Book Summary or Review
+- Login (/login)
 - Forgot Password
 
 ## Templates
 
+- Login Form
 - Navigation
 - List of Books (Cards Collection)
 - List of Books (Tabular)

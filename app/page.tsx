@@ -1,13 +1,12 @@
 "use client";
 // explicit mention this component to run as client side component so that react bootstrap can work
 import Link from "next/link";
-import { Container } from "react-bootstrap";
 
 import styles from "./page.module.css";
 
 export default function Home() {
   return (
-    <Container fluid className={styles.introHeaderContainer}>
+    <div className={styles.introHeaderContainer}>
       <header className="py-3 mb-4 border-bottom">
         <Link
           href="/"
@@ -28,6 +27,6 @@ export default function Home() {
           </Link>
         </div>
       </div>
-    </Container>
+    </div>
   );
 }

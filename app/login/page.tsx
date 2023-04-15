@@ -1,7 +1,6 @@
 "use client";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import styles from "../page.module.css";
 
 export default function Login() {
@@ -13,7 +12,7 @@ export default function Login() {
   }
   return (
     <>
-      <Container fluid className={styles.introHeaderContainer}>
+      <div className={styles.introHeaderContainer}>
         <header className="py-3 mb-4 border-bottom">
           <Link
             href="/"
@@ -27,33 +26,22 @@ export default function Login() {
           <div className="container-fluid py-5">
             <h1 className="display-5 fw-bold">Hello there!</h1>
             <p className="col-md-8 fs-4">First tell us who you are!</p>
-            <Row>
-              <Col md={4}>
-                <Form onSubmit={handleSubmit}>
-                  <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" placeholder="Enter email" />
-                  </Form.Group>
-
-                  <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Label>Password</Form.Label>
-                    <Form.Control
-                      type="password"
-                      placeholder="Enter password"
-                    />
-                  </Form.Group>
-                  <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                    <Form.Check type="checkbox" label="Remember Me" />
-                  </Form.Group>
-                  <Button variant="primary" type="submit">
-                    Login
-                  </Button>
-                </Form>
-              </Col>
-            </Row>
+            <form onSubmit={handleSubmit}>
+              <div className="mb-3">
+                <label>Email address</label>
+                <input type="email" placeholder="Enter email" />
+              </div>
+              <div className="mb-3">
+                <label>Password</label>
+                <input type="password" placeholder="Enter password" />
+              </div>
+              <button type="submit" onClick={() => handleSubmit()}>
+                Login
+              </button>
+            </form>
           </div>
         </div>
-      </Container>
+      </div>
     </>
   );
 }
