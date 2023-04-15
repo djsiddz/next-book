@@ -1,7 +1,8 @@
 export default function Dashboard() {
-    return (
-        <>
-            <h2>This is the Dashboard page!</h2>
-        </>
-    )
+  return (
+    <div className="p-10">
+      <aside></aside>
+      <main></main>
+    </div>
+  );
 }

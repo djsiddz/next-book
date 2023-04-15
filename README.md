@@ -6,7 +6,7 @@ What's the next book I should read? Your personal book collection management app
 
 - NextJS 13
 - ReactJS 18
-- React Bootstrap
+- TailwindCSS
 - StorybookJS
 
 ## Project Scope
@@ -45,7 +45,7 @@ Near Future Scope:
 
 ## Templates
 
-- Login Form
+- Login Form ✅
 - Navigation
 - List of Books (Cards Collection)
 - List of Books (Tabular)
@@ -63,12 +63,12 @@ Near Future Scope:
 
 ## Atoms
 
-- Buttons
+- Buttons ✅
 - Tags
 - Book Cover Image
 - Links
 - User Profile Photo
-- Input Field
+- Input Field ✅
 - Label
 - Text (Body, Header, Title Text can be created/controlled by CSS styling)
 
