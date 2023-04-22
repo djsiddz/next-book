@@ -1,6 +1,6 @@
-import Link from 'next/link';
-import React from 'react';
 import { ButtonProps } from './ButtonProps';
+
+import Link from 'next/link';
 
 export function Button({ text, href }: ButtonProps) {
   return (
