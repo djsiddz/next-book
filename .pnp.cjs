@@ -28,6 +28,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [null, {\
           "packageLocation": "./",\
           "packageDependencies": [\
+            ["@next/eslint-plugin-next", "npm:13.3.1"],\
             ["@types/node", "npm:18.15.13"],\
             ["@types/react", "npm:18.0.38"],\
             ["@types/react-dom", "npm:18.0.11"],\
@@ -3451,6 +3452,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",\
           "packageDependencies": [\
             ["next-book", "workspace:."],\
+            ["@next/eslint-plugin-next", "npm:13.3.1"],\
             ["@types/node", "npm:18.15.13"],\
             ["@types/react", "npm:18.0.38"],\
             ["@types/react-dom", "npm:18.0.11"],\
