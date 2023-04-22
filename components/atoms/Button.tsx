@@ -1,11 +1,6 @@
-'use client';
 import Link from 'next/link';
 import React from 'react';
-
-type ButtonProps = {
-  text: string;
-  href: string;
-};
+import { ButtonProps } from './ButtonProps';
 
 export function Button({ text, href }: ButtonProps) {
   return (
