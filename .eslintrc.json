@@ -75,6 +75,9 @@
     // React Hooks Plugin - rules available via `eslint-plugin-react-hooks`.
     "react-hooks/exhaustive-deps": "warn",
 
+    // Import Resolver TypeScript = rules available via `eslint-import-resolver-typescript`
+    "import/no-unresolved": "error",
+
     // Import Plugin - rules available via `eslint-plugin-import`.
     "import/order": [
       "error",
@@ -117,7 +120,10 @@
       "node": {
         "extensions": [".js", ".jsx", ".ts", ".tsx"]
       },
-      "typescript": {}
+      "typescript": {
+        "alwaysTryTypes": true, // always try to resolve types under `<root>@types` directory even it doesn't contain any source code, like `@types/unist`
+        "project": "./"
+      }
     },
     "import/external-module-folders": ["node_modules"],
     "import/extensions": [".js", ".jsx", ".ts", ".tsx"],
