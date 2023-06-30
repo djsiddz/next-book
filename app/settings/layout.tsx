@@ -9,7 +9,7 @@ export default function SettingsLayout({ children }: { children: React.ReactNode
   return (
     <div className="p-10">
       <Header showNavigation />
-      <main className="p-10 bg-white mt-3 w-full flex">{children}</main>
+      <main className="mt-3 flex w-full bg-white p-10">{children}</main>
     </div>
   );
 }
