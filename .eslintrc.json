@@ -4,13 +4,7 @@
     "es2021": true,
     "node": true
   },
-  "extends": [
-    "next/core-web-vitals",
-    "plugin:@next/next/recommended",
-    "plugin:@typescript-eslint/recommended",
-    "prettier",
-    "plugin:react/jsx-runtime"
-  ],
+  "extends": ["next/core-web-vitals", "plugin:@typescript-eslint/recommended", "prettier", "plugin:react/jsx-runtime"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
@@ -98,10 +92,7 @@
     ],
     "@typescript-eslint/no-shadow": ["error"],
     "no-empty-function": "off",
-    "@typescript-eslint/no-empty-function": [
-      "error",
-      { "allow": ["functions", "arrowFunctions", "methods"] }
-    ],
+    "@typescript-eslint/no-empty-function": ["error", { "allow": ["functions", "arrowFunctions", "methods"] }],
 
     // Import alias Plugin - rules available via `eslint-plugin-import-alias`.
     "import-alias/import-alias": [
