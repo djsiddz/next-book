@@ -11,12 +11,7 @@
     "moduleResolution": "node",
     "noEmit": true,
     "paths": {
-      "@/atoms/*": ["./components/atoms/*"],
-      "@/molecules/*": ["./components/molecules/*"],
-      "@/organisms/*": ["./components/organisms/*"],
-      "@/templates/*": ["./components/templates/*"],
-      "@/utils/*": ["./utils/*"]
-      // "@/*": ["./*"],
+      "@/*": ["./*"],
     },
     "plugins": [
       {
