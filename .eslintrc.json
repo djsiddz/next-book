@@ -72,15 +72,6 @@
     // Import Resolver TypeScript = rules available via `eslint-import-resolver-typescript`
     "import/no-unresolved": "error",
 
-    // Import Plugin - rules available via `eslint-plugin-import`.
-    "import/order": [
-      "error",
-      { "groups": ["builtin", "external", "internal", "parent", "sibling", "index", "object", "type"],
-        "newlines-between": "always",
-        "alphabetize": { "order": "asc", "caseInsensitive": true }
-      }
-    ],
-
     // Typescript Plugin - rules available via `@typescript-eslint`.
     "@typescript-eslint/no-restricted-imports": [
       "warn",
@@ -106,7 +97,38 @@
           { "alias": "ZU", "matcher": "./utils/" }
         ]
       }
+    ],
+    // Import Plugin - rules available via `eslint-plugin-import`.
+    "import/order": [
+      "error",
+      { "groups": ["builtin", "external", "internal", "parent", "sibling", "index", "object", "type"],
+        "pathGroups": [
+          {
+            "pattern": "ZC/**",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "ZL/**",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "ZP/**",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "ZU/**",
+            "group": "internal",
+            "position": "after"
+          }
+        ],
+        "newlines-between": "always",
+        "alphabetize": { "order": "asc", "caseInsensitive": true }
+      }
     ]
+
   },
   "settings": {
     "import/resolver": {
@@ -118,7 +140,6 @@
         "project": "./"
       }
     },
-    "import/external-module-folders": ["node_modules"],
     "import/extensions": [".js", ".jsx", ".ts", ".tsx"],
     "import/parsers": {
       "@typescript-eslint/parser": [".ts", ".tsx"]

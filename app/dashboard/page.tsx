@@ -1,6 +1,7 @@
 
 import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
+
 import { createClient } from 'ZU/supabase/server';
 
 export default async function PrivatePage() {
