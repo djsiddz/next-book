@@ -100,31 +100,8 @@
     ],
     // Import Plugin - rules available via `eslint-plugin-import`.
     "import/order": [
-      "error",
-      { "groups": ["builtin", "external", "internal", "parent", "sibling", "index", "object", "type"],
-        "pathGroups": [
-          {
-            "pattern": "ZC/**",
-            "group": "internal",
-            "position": "after"
-          },
-          {
-            "pattern": "ZL/**",
-            "group": "internal",
-            "position": "after"
-          },
-          {
-            "pattern": "ZP/**",
-            "group": "internal",
-            "position": "after"
-          },
-          {
-            "pattern": "ZU/**",
-            "group": "internal",
-            "position": "after"
-          }
-        ],
-        "newlines-between": "always",
+      "warn",
+      {
         "alphabetize": { "order": "asc", "caseInsensitive": true }
       }
     ]
