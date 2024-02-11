@@ -37,7 +37,7 @@ const RAW_RUNTIME_STATE =
           ["@typescript-eslint/eslint-plugin", "virtual:6522947f86ef2d1f0dc4dac0143511a1610d3c6fd49a3aeaaecd72bce718a4bd764b42d025a3f7ec41e15845307aaf3324b8d2fc7be6e5b9cf662790bf860770#npm:6.21.0"],\
           ["@typescript-eslint/parser", "virtual:6522947f86ef2d1f0dc4dac0143511a1610d3c6fd49a3aeaaecd72bce718a4bd764b42d025a3f7ec41e15845307aaf3324b8d2fc7be6e5b9cf662790bf860770#npm:6.21.0"],\
           ["autoprefixer", "virtual:6522947f86ef2d1f0dc4dac0143511a1610d3c6fd49a3aeaaecd72bce718a4bd764b42d025a3f7ec41e15845307aaf3324b8d2fc7be6e5b9cf662790bf860770#npm:10.4.17"],\
-          ["better-commits", "npm:1.11.0"],\
+          ["better-commits", "npm:1.12.0"],\
           ["class-variance-authority", "npm:0.7.0"],\
           ["clsx", "npm:2.1.0"],\
           ["eslint", "npm:8.56.0"],\
@@ -46,7 +46,7 @@ const RAW_RUNTIME_STATE =
           ["eslint-import-resolver-typescript", "virtual:6522947f86ef2d1f0dc4dac0143511a1610d3c6fd49a3aeaaecd72bce718a4bd764b42d025a3f7ec41e15845307aaf3324b8d2fc7be6e5b9cf662790bf860770#npm:3.6.1"],\
           ["eslint-plugin-import", "virtual:6522947f86ef2d1f0dc4dac0143511a1610d3c6fd49a3aeaaecd72bce718a4bd764b42d025a3f7ec41e15845307aaf3324b8d2fc7be6e5b9cf662790bf860770#npm:2.29.1"],\
           ["eslint-plugin-import-alias", "npm:1.2.0"],\
-          ["lucide-react", "virtual:6522947f86ef2d1f0dc4dac0143511a1610d3c6fd49a3aeaaecd72bce718a4bd764b42d025a3f7ec41e15845307aaf3324b8d2fc7be6e5b9cf662790bf860770#npm:0.323.0"],\
+          ["lucide-react", "virtual:6522947f86ef2d1f0dc4dac0143511a1610d3c6fd49a3aeaaecd72bce718a4bd764b42d025a3f7ec41e15845307aaf3324b8d2fc7be6e5b9cf662790bf860770#npm:0.325.0"],\
           ["next", "virtual:6522947f86ef2d1f0dc4dac0143511a1610d3c6fd49a3aeaaecd72bce718a4bd764b42d025a3f7ec41e15845307aaf3324b8d2fc7be6e5b9cf662790bf860770#npm:14.1.0"],\
           ["postcss", "npm:8.4.35"],\
           ["prettier", "npm:3.2.5"],\
@@ -1869,16 +1869,16 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["better-commits", [\
-      ["npm:1.11.0", {\
-        "packageLocation": "../../.yarn/berry/cache/better-commits-npm-1.11.0-4f61f3972b-10c0.zip/node_modules/better-commits/",\
+      ["npm:1.12.0", {\
+        "packageLocation": "../../.yarn/berry/cache/better-commits-npm-1.12.0-6626908619-10c0.zip/node_modules/better-commits/",\
         "packageDependencies": [\
-          ["better-commits", "npm:1.11.0"],\
+          ["better-commits", "npm:1.12.0"],\
           ["@clack/core", "npm:0.3.2"],\
           ["@clack/prompts", "npm:0.6.3"],\
           ["configstore", "npm:5.0.1"],\
           ["picocolors", "npm:1.0.0"],\
           ["zod", "npm:3.21.4"],\
-          ["zod-validation-error", "virtual:4f61f3972b496a2da16527f161a0d75c5209f2b90f4a9cae36fda5e3e15fe97d02c026c982cf6aebae0c0ee64b1bee252088d45fd50e01592bf8d78327a4e9f2#npm:1.3.0"]\
+          ["zod-validation-error", "virtual:66269086192d267c762560dd404fcd0b806656e192398a5f0dfde98bf98bca74eaeebcd33d9456215c76f96dc3b8474b41cbea277247b43d5e4beb2542490c60#npm:1.3.0"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -4542,17 +4542,17 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["lucide-react", [\
-      ["npm:0.323.0", {\
-        "packageLocation": "../../.yarn/berry/cache/lucide-react-npm-0.323.0-9096ac3635-10c0.zip/node_modules/lucide-react/",\
+      ["npm:0.325.0", {\
+        "packageLocation": "../../.yarn/berry/cache/lucide-react-npm-0.325.0-9a32e6785c-10c0.zip/node_modules/lucide-react/",\
         "packageDependencies": [\
-          ["lucide-react", "npm:0.323.0"]\
+          ["lucide-react", "npm:0.325.0"]\
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:6522947f86ef2d1f0dc4dac0143511a1610d3c6fd49a3aeaaecd72bce718a4bd764b42d025a3f7ec41e15845307aaf3324b8d2fc7be6e5b9cf662790bf860770#npm:0.323.0", {\
-        "packageLocation": "./.yarn/__virtual__/lucide-react-virtual-305e786c8c/3/.yarn/berry/cache/lucide-react-npm-0.323.0-9096ac3635-10c0.zip/node_modules/lucide-react/",\
+      ["virtual:6522947f86ef2d1f0dc4dac0143511a1610d3c6fd49a3aeaaecd72bce718a4bd764b42d025a3f7ec41e15845307aaf3324b8d2fc7be6e5b9cf662790bf860770#npm:0.325.0", {\
+        "packageLocation": "./.yarn/__virtual__/lucide-react-virtual-3ada792299/3/.yarn/berry/cache/lucide-react-npm-0.325.0-9a32e6785c-10c0.zip/node_modules/lucide-react/",\
         "packageDependencies": [\
-          ["lucide-react", "virtual:6522947f86ef2d1f0dc4dac0143511a1610d3c6fd49a3aeaaecd72bce718a4bd764b42d025a3f7ec41e15845307aaf3324b8d2fc7be6e5b9cf662790bf860770#npm:0.323.0"],\
+          ["lucide-react", "virtual:6522947f86ef2d1f0dc4dac0143511a1610d3c6fd49a3aeaaecd72bce718a4bd764b42d025a3f7ec41e15845307aaf3324b8d2fc7be6e5b9cf662790bf860770#npm:0.325.0"],\
           ["@types/react", "npm:18.2.55"],\
           ["react", "npm:18.2.0"]\
         ],\
@@ -4885,7 +4885,7 @@ const RAW_RUNTIME_STATE =
           ["@typescript-eslint/eslint-plugin", "virtual:6522947f86ef2d1f0dc4dac0143511a1610d3c6fd49a3aeaaecd72bce718a4bd764b42d025a3f7ec41e15845307aaf3324b8d2fc7be6e5b9cf662790bf860770#npm:6.21.0"],\
           ["@typescript-eslint/parser", "virtual:6522947f86ef2d1f0dc4dac0143511a1610d3c6fd49a3aeaaecd72bce718a4bd764b42d025a3f7ec41e15845307aaf3324b8d2fc7be6e5b9cf662790bf860770#npm:6.21.0"],\
           ["autoprefixer", "virtual:6522947f86ef2d1f0dc4dac0143511a1610d3c6fd49a3aeaaecd72bce718a4bd764b42d025a3f7ec41e15845307aaf3324b8d2fc7be6e5b9cf662790bf860770#npm:10.4.17"],\
-          ["better-commits", "npm:1.11.0"],\
+          ["better-commits", "npm:1.12.0"],\
           ["class-variance-authority", "npm:0.7.0"],\
           ["clsx", "npm:2.1.0"],\
           ["eslint", "npm:8.56.0"],\
@@ -4894,7 +4894,7 @@ const RAW_RUNTIME_STATE =
           ["eslint-import-resolver-typescript", "virtual:6522947f86ef2d1f0dc4dac0143511a1610d3c6fd49a3aeaaecd72bce718a4bd764b42d025a3f7ec41e15845307aaf3324b8d2fc7be6e5b9cf662790bf860770#npm:3.6.1"],\
           ["eslint-plugin-import", "virtual:6522947f86ef2d1f0dc4dac0143511a1610d3c6fd49a3aeaaecd72bce718a4bd764b42d025a3f7ec41e15845307aaf3324b8d2fc7be6e5b9cf662790bf860770#npm:2.29.1"],\
           ["eslint-plugin-import-alias", "npm:1.2.0"],\
-          ["lucide-react", "virtual:6522947f86ef2d1f0dc4dac0143511a1610d3c6fd49a3aeaaecd72bce718a4bd764b42d025a3f7ec41e15845307aaf3324b8d2fc7be6e5b9cf662790bf860770#npm:0.323.0"],\
+          ["lucide-react", "virtual:6522947f86ef2d1f0dc4dac0143511a1610d3c6fd49a3aeaaecd72bce718a4bd764b42d025a3f7ec41e15845307aaf3324b8d2fc7be6e5b9cf662790bf860770#npm:0.325.0"],\
           ["next", "virtual:6522947f86ef2d1f0dc4dac0143511a1610d3c6fd49a3aeaaecd72bce718a4bd764b42d025a3f7ec41e15845307aaf3324b8d2fc7be6e5b9cf662790bf860770#npm:14.1.0"],\
           ["postcss", "npm:8.4.35"],\
           ["prettier", "npm:3.2.5"],\
@@ -7009,10 +7009,10 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:4f61f3972b496a2da16527f161a0d75c5209f2b90f4a9cae36fda5e3e15fe97d02c026c982cf6aebae0c0ee64b1bee252088d45fd50e01592bf8d78327a4e9f2#npm:1.3.0", {\
-        "packageLocation": "./.yarn/__virtual__/zod-validation-error-virtual-cd0e879838/3/.yarn/berry/cache/zod-validation-error-npm-1.3.0-f5b51dc29b-10c0.zip/node_modules/zod-validation-error/",\
+      ["virtual:66269086192d267c762560dd404fcd0b806656e192398a5f0dfde98bf98bca74eaeebcd33d9456215c76f96dc3b8474b41cbea277247b43d5e4beb2542490c60#npm:1.3.0", {\
+        "packageLocation": "./.yarn/__virtual__/zod-validation-error-virtual-ec5db1a88d/3/.yarn/berry/cache/zod-validation-error-npm-1.3.0-f5b51dc29b-10c0.zip/node_modules/zod-validation-error/",\
         "packageDependencies": [\
-          ["zod-validation-error", "virtual:4f61f3972b496a2da16527f161a0d75c5209f2b90f4a9cae36fda5e3e15fe97d02c026c982cf6aebae0c0ee64b1bee252088d45fd50e01592bf8d78327a4e9f2#npm:1.3.0"],\
+          ["zod-validation-error", "virtual:66269086192d267c762560dd404fcd0b806656e192398a5f0dfde98bf98bca74eaeebcd33d9456215c76f96dc3b8474b41cbea277247b43d5e4beb2542490c60#npm:1.3.0"],\
           ["@types/zod", null],\
           ["zod", "npm:3.21.4"]\
         ],\

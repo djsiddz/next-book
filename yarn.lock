@@ -1397,9 +1397,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"better-commits@npm:^1.11.0":
-  version: 1.11.0
-  resolution: "better-commits@npm:1.11.0"
+"better-commits@npm:^1.12.0":
+  version: 1.12.0
+  resolution: "better-commits@npm:1.12.0"
   dependencies:
     "@clack/core": "npm:^0.3.1"
     "@clack/prompts": "npm:^0.6.2"
@@ -1413,7 +1413,7 @@ __metadata:
     better-commits: dist/index.js
     better-commits-init: dist/init.js
     git-bc: dist/index.js
-  checksum: 10c0/00c4fb46922c2429c7bfdfe67251c8d7e3add146a71233ac549dc6e938aae18f0c8207848f14f9e50e36cad5a59419676458d69442808c4a7a137ae527cfb8f3
+  checksum: 10c0/4585672c544537e119a8c8e65aad656bfc4c00955b3cfdc3548e8e19cea346b59548f9bb92cf828bff3a0e112bd53d341856b2551e6c8473df65888e52a7905b
   languageName: node
   linkType: hard
 
@@ -3585,12 +3585,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lucide-react@npm:^0.323.0":
-  version: 0.323.0
-  resolution: "lucide-react@npm:0.323.0"
+"lucide-react@npm:^0.325.0":
+  version: 0.325.0
+  resolution: "lucide-react@npm:0.325.0"
   peerDependencies:
     react: ^16.5.1 || ^17.0.0 || ^18.0.0
-  checksum: 10c0/2b4d0bbf936a2fd78f83e15a65dfd682f86817cf1942df616d0f0f6ed129d2b0c592248e736e3330085d468cfc0ef108d88f35e8a05228c2215973d8a1f2fb90
+  checksum: 10c0/1941860d8bfa75b46a4f0ca6e4195dcc0da19ee67de88ad289b1bf12b11837fe903f21910971d44e99c35beb4aeafaf5b4e8ec4398e979d6c058f5f26df0eea2
   languageName: node
   linkType: hard
 
@@ -3850,7 +3850,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": "npm:^6.21.0"
     "@typescript-eslint/parser": "npm:^6.21.0"
     autoprefixer: "npm:^10.4.17"
-    better-commits: "npm:^1.11.0"
+    better-commits: "npm:^1.12.0"
     class-variance-authority: "npm:^0.7.0"
     clsx: "npm:^2.1.0"
     eslint: "npm:8.56.0"
@@ -3859,7 +3859,7 @@ __metadata:
     eslint-import-resolver-typescript: "npm:^3.6.1"
     eslint-plugin-import: "npm:^2.29.1"
     eslint-plugin-import-alias: "npm:^1.2.0"
-    lucide-react: "npm:^0.323.0"
+    lucide-react: "npm:^0.325.0"
     next: "npm:^14.1.0"
     postcss: "npm:^8.4.35"
     prettier: "npm:^3.2.5"
