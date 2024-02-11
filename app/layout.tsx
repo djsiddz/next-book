@@ -2,8 +2,8 @@ import './globals.css';
 
 import React from 'react';
 
-import { fontSans } from '@/lib/fonts';
-import { cn } from '@/lib/utils';
+import { fontSans } from 'ZL/fonts';
+import { cn } from 'ZL/utils';
 
 export const metadata = {
   title: 'Next Book',

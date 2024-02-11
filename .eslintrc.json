@@ -100,8 +100,10 @@
       {
         "relativeDepth": 2,
         "aliases": [
-          { "alias": "@styles", "matcher": "./srs/styles" },
-          { "alias": "@", "matcher": "./src" }
+          { "alias": "ZC", "matcher": "./components/" },
+          { "alias": "ZL", "matcher": "./lib/" },
+          { "alias": "ZP", "matcher": "./public/" },
+          { "alias": "ZU", "matcher": "./utils/" }
         ]
       }
     ]
