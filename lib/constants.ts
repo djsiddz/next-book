@@ -37,15 +37,15 @@ export const socialLinks = [{
 {
   title: "Follow on X 🐦",
   href: "https://x.com/Super_Siddy",
-  description: ""
+  description: "Join the conversation"
 },
 {
   title: "Connect on LinkedIn",
   href: "https://linkedin.com/in/siddhesh-thadeshwar",
-  description: ""
+  description: "For opportunities or collaboration"
 },
 {
   title: "Connect on Peerlist",
   href: "https://peerlist.io/siddhesht",
-  description: ""
+  description: "For people in tech"
 }];
