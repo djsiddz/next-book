@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
-import { login } from './actions';
+import { signup } from '../login/actions';
 
 import { ChevronRightSquareIcon } from 'lucide-react';
 import Link from 'next/link';
@@ -15,7 +15,7 @@ export default function LoginPage() {
         <ChevronRightSquareIcon size={96} />
       </div>
       <div className="w-1/2 p-10 flex flex-col justify-center items-start">
-        <h2 className="text-2xl mb-16">Welcome back, reader! 👋</h2>
+        <h2 className="text-2xl mb-16">Hello new reader! 😄</h2>
         <form className="flex flex-col gap-4 items-start">
           <div className="grid w-full max-w-sm items-center gap-1.5">
             <Label htmlFor="email">Email</Label>
@@ -25,12 +25,12 @@ export default function LoginPage() {
             <Label htmlFor="password">Password</Label>
             <Input type="password" id="password" placeholder="Password" name="password" required />
           </div>
-          <Button className="py-3 w-full" formAction={login}>Let&apos;s go!</Button>
+          <Button className="py-3 w-full" formAction={signup}>Sign Me Up!</Button>
         </form>
         <div className="flex flex-row items-center mt-8">
-          <Label>Don't have an account?</Label>
+          <Label>Already have an account?</Label>
           <Button asChild variant="link">
-            <Link href="/signup">👉 Create a new one</Link>
+            <Link href="/login">👉 Let's start</Link>
           </Button>
         </div>
       </div>
