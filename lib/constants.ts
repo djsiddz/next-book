@@ -59,4 +59,4 @@ export const profileLinks = [{
   title: "Logout",
   href: "/logout",
   description: "See you soon! 👋"
-}]
+}];
