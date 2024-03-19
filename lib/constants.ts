@@ -49,3 +49,14 @@ export const socialLinks = [{
   href: "https://peerlist.io/siddhesht",
   description: "For people in tech"
 }];
+
+export const profileLinks = [{
+  title: "Manage Profile",
+  href: "/dashboard/profile",
+  description: "Update your details here"
+},
+{
+  title: "Logout",
+  href: "/logout",
+  description: "See you soon! 👋"
+}]
