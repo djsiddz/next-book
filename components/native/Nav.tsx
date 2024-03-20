@@ -10,24 +10,53 @@ import { cn } from "ZL/utils";
 
 export default function Nav() {
   return (
-    <NavigationMenu className="min-w-100 max-w-screen flex justify-between">
-      <NavigationMenuList className="">
-        <NavigationMenuItem className="flex items-center mr-10">
+    <NavigationMenu className="min-w-100 max-w-screen flex justify-between px-0">
+      <NavigationMenuList>
+        <NavigationMenuItem id="mobile-nav" className="visible md:hidden flex items-center">
+          <NavigationMenuTrigger className="pl-0">
+            <ChevronRightSquareIcon size={36} className="inline" /> <span className=" text-xl pl-3">Next Book</span>
+          </NavigationMenuTrigger>
+          <NavigationMenuContent className="p-2">
+            <ul className="grid w-[280px] gap-2 md:grid-cols-2 md:w-[500px]">
+              <ListItem key={"features-link"} title="Features" href={"#features"}></ListItem>
+              <h3 className="text-base uppercase text-bold pl-2 pt-4">Resources</h3>
+              {resourcesLinks.map((component) => (
+                <ListItem
+                  key={component.title}
+                  title={component.title}
+                  href={component.href}
+                >
+                  {component.description}
+                </ListItem>
+              ))}
+              <h3 className="text-base uppercase text-bold pl-2 pt-4">Contact</h3>
+              {socialLinks.map((component) => (
+                <ListItem
+                  key={component.title}
+                  title={component.title}
+                  href={component.href}
+                >
+                  {component.description}
+                </ListItem>
+              ))}
+            </ul>
+          </NavigationMenuContent>
+        </NavigationMenuItem>
+        <NavigationMenuItem id="desktop-logo" className="md:flex items-center hidden md:visible">
           <Link href="/" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+            <NavigationMenuLink className={`px-0 md:mr-10 ${navigationMenuTriggerStyle()}`}>
               <ChevronRightSquareIcon size={36} className="inline" /> <span className=" text-xl pl-3">Next Book</span>
             </NavigationMenuLink>
           </Link>
-
         </NavigationMenuItem>
-        <NavigationMenuItem>
+        <NavigationMenuItem id="features-link" className="hidden md:flex">
           <Link href="#features" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               Features
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
-        <NavigationMenuItem>
+        <NavigationMenuItem id="resources-links" className="hidden md:flex">
           <NavigationMenuTrigger>Resources</NavigationMenuTrigger>
           <NavigationMenuContent className="p-2">
             <ul className="grid w-[300px] gap-2 p-2 md:grid-cols-2 md:w-[500px]">
@@ -43,7 +72,7 @@ export default function Nav() {
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
-        <NavigationMenuItem>
+        <NavigationMenuItem id="contact-links" className="hidden md:flex">
           <NavigationMenuTrigger>Contact</NavigationMenuTrigger>
           <NavigationMenuContent className="p-2">
             <ul className="grid w-[300px] gap-2 p-2 md:grid-cols-2 md:w-[500px]">
