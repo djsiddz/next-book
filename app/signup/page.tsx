@@ -30,8 +30,9 @@ export default function WaitlistPage() {
             <Input type="email" id="email" placeholder="Email" name="email" required />
             <Label htmlFor="password">Password</Label>
             <Input type="password" id="password" placeholder="Password" name="password" required />
-            <Label className="hidden" htmlFor="campaign">Campaign</Label>
-            <Input className="hidden" type="text" id="campaign" value={campaign} name="campaign" readOnly required />
+            <Label htmlFor="campaign">Campaign</Label>
+            <Input type="text" id="campaign" value={campaign} name="campaign" readOnly required />
+            <p className="text-xs text-gray-600">This is for me to know how you found Next Book.</p>
           </div>
           <Button className="py-3 w-full" formAction={signupOnWaitlist}>Join the Waitlist!</Button>
         </form>

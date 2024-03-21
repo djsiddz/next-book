@@ -1,13 +1,8 @@
-"use client";
-
-
-const quotes = [
-  `"I knew I was not reading upto my potential!" - Po`,
-  `"The only thing that matters is what you choose to read now." - Po`,
-  `"I knew I was not reading upto my potential!" - Po`,
-];
-
 export default function RandomQuote() {
+  const quotes = [
+    `"I knew I was not reading upto my potential!" - Po`,
+    `"The only thing that matters is what you choose to read now." - Po`,
+  ];
   const bookQuote = quotes[(Math.floor(Math.random() * quotes.length))];
 
   return (

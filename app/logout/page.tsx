@@ -26,7 +26,7 @@ export default function LogoutPage() {
       </div>
       <div className="w-1/2 p-10 flex flex-col justify-center items-start">
         <h2 className="text-2xl mb-8">See you later!</h2>
-        <p>Catch a breath. Have a great day! 👋 <br />Redirecting you to home page in 10 seconds...</p>
+        <p>Catch a breath. Have a great day! 👋 <br />Redirecting you to home page in 10 seconds<br />Or you can close the tab.</p>
         <div className="mt-32"><RandomQuote /></div>
       </div>
     </div>
