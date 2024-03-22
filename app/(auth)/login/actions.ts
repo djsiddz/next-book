@@ -36,9 +36,16 @@ export async function signupOnWaitlist(formData: FormData) {
   // Type-casting here for convenience
   // in practice, you should validate your inputs
   const data = {
-    email: formData.get('email') as string,
-    password: formData.get('password') as string || "",
-    options: { data: { name: formData.get('name') as string, campaign : formData.get('campaign') as string }},
+    email: formData.get("email") as string,
+    password: formData.get("password") as string,
+    options: {
+      data: {
+        screen_name: formData.get("screen_name") as string,
+        full_name: formData.get("name") as string,
+        avatar_url: null,
+        campaign: formData.get("campaign") as string,
+      },
+    },
   };
 
   const { error } = await supabase.auth.signUp(data);
