@@ -22,6 +22,7 @@ export async function login(formData: FormData) {
   if (error) {
     // TODO: Possible errors to handle:
     // 1. AuthApiError: Email not confirmed
+    console.error(error);
     redirect("/error");
   }
 
@@ -54,6 +55,7 @@ export async function signupOnWaitlist(formData: FormData) {
     // TODO: Possible errors to handle:
     // 1. AuthWeakPasswordError: Password should contain at least one character of each: abcdefghijklmnopqrstuvwxyz, ABCDEFGHIJKLMNOPQRSTUVWXYZ, 0123456789, !@#$%^&*()_+-=[]{};\'\:"|<>?,./`~.
     // 2. AuthApiError: Database error saving new user
+    console.error(error);
     redirect("/error");
   }
 
@@ -77,6 +79,7 @@ export async function signup(formData: FormData) {
   if (error) {
     // TODO: Possible errors to handle:
     // 1. AuthWeakPasswordError: Password should contain at least one character of each: abcdefghijklmnopqrstuvwxyz, ABCDEFGHIJKLMNOPQRSTUVWXYZ, 0123456789, !@#$%^&*()_+-=[]{};\'\:"|<>?,./`~.
+    console.error(error);
     redirect("/error");
   }
 
@@ -89,10 +92,5 @@ export async function logout() {
   const supabase = createClient(cookieStore);
 
   const { error } = await supabase.auth.signOut();
-  if (!error) {
-    revalidatePath("/", "layout");
-    redirect("/logout?status=success");
-  }
-
-  throw error;
+  console.error(error);
 }

@@ -5,7 +5,6 @@ export async function middleware(request: NextRequest) {
   const { supabase, response } = await updateSession(request);
 
   const { data } = await supabase.auth.getSession();
-
   // If the user is accessing a page other than dashboard, do nothing
   if (request.nextUrl.pathname !== "/dashboard") return response;
 
@@ -15,11 +14,14 @@ export async function middleware(request: NextRequest) {
     return NextResponse.redirect(request.nextUrl.origin + "/login");
   }
 
+
+  const { data: userData } = await supabase.auth.getUser();
   // Fetch the user's waitlist entry
+  // eslint-disable-next-line no-console
   const { data: waitlistStatus } = await supabase
     .from("profiles")
     .select("approved")
-    .eq("user_id", data.session?.user.id)
+    .eq("user_id", userData?.user?.id)
     .single();
 
   // The user is approved, allow access to dashboard

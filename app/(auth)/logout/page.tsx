@@ -6,7 +6,6 @@ import { logout } from "../login/actions";
 import { ChevronRightSquareIcon } from "lucide-react";
 
 import { useRouter } from "next/navigation";
-import RandomQuote from "ZC/native/RandomQuote";
 
 export default function LogoutPage() {
   const quotes = [
@@ -48,7 +47,8 @@ export default function LogoutPage() {
           Or you can close the tab.
         </p>
         <div className="mt-32">
-          <RandomQuote bookQuote={bookQuote} />
+          <p className="mb-4 text-xs font-bold">I definitely think they were talking about Books...</p>
+          <p className="text-base">{bookQuote}</p>
         </div>
       </div>
     </div>
