@@ -1,10 +1,10 @@
 "use server";
 
-import { revalidatePath } from 'next/cache';
-import { cookies } from 'next/headers';
-import { redirect } from 'next/navigation';
+import { revalidatePath } from "next/cache";
+import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
 
-import { createClient } from 'ZU/supabase/server';
+import { createClient } from "ZU/supabase/server";
 
 export async function login(formData: FormData) {
   const cookieStore = cookies();
@@ -13,8 +13,8 @@ export async function login(formData: FormData) {
   // Type-casting here for convenience
   // in practice, you should validate your inputs
   const data = {
-    email: formData.get('email') as string,
-    password: formData.get('password') as string,
+    email: formData.get("email") as string,
+    password: formData.get("password") as string,
   };
 
   const { error } = await supabase.auth.signInWithPassword(data);
@@ -22,11 +22,11 @@ export async function login(formData: FormData) {
   if (error) {
     // TODO: Possible errors to handle:
     // 1. AuthApiError: Email not confirmed
-    redirect('/error');
+    redirect("/error");
   }
 
-  revalidatePath('/', 'layout');
-  redirect('/dashboard');
+  revalidatePath("/", "layout");
+  redirect("/dashboard");
 }
 
 export async function signupOnWaitlist(formData: FormData) {
@@ -47,11 +47,11 @@ export async function signupOnWaitlist(formData: FormData) {
     // TODO: Possible errors to handle:
     // 1. AuthWeakPasswordError: Password should contain at least one character of each: abcdefghijklmnopqrstuvwxyz, ABCDEFGHIJKLMNOPQRSTUVWXYZ, 0123456789, !@#$%^&*()_+-=[]{};\'\:"|<>?,./`~.
     // 2. AuthApiError: Database error saving new user
-    redirect('/error')
+    redirect("/error");
   }
 
-  revalidatePath('/', 'layout');
-  redirect('/waitlist');
+  revalidatePath("/", "layout");
+  redirect("/waitlist");
 }
 
 export async function signup(formData: FormData) {
@@ -61,8 +61,8 @@ export async function signup(formData: FormData) {
   // Type-casting here for convenience
   // in practice, you should validate your inputs
   const data = {
-    email: formData.get('email') as string,
-    password: formData.get('password') as string,
+    email: formData.get("email") as string,
+    password: formData.get("password") as string,
   };
 
   const { error } = await supabase.auth.signUp(data);
@@ -70,11 +70,11 @@ export async function signup(formData: FormData) {
   if (error) {
     // TODO: Possible errors to handle:
     // 1. AuthWeakPasswordError: Password should contain at least one character of each: abcdefghijklmnopqrstuvwxyz, ABCDEFGHIJKLMNOPQRSTUVWXYZ, 0123456789, !@#$%^&*()_+-=[]{};\'\:"|<>?,./`~.
-    redirect('/error')
+    redirect("/error");
   }
 
-  revalidatePath('/', 'layout');
-  redirect('/dashboard');
+  revalidatePath("/", "layout");
+  redirect("/dashboard");
 }
 
 export async function logout() {
@@ -82,8 +82,10 @@ export async function logout() {
   const supabase = createClient(cookieStore);
 
   const { error } = await supabase.auth.signOut();
-  if(!error) {
-    revalidatePath('/', 'layout');
+  if (!error) {
+    revalidatePath("/", "layout");
     redirect("/logout?status=success");
   }
+
+  throw error;
 }
