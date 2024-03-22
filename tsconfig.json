@@ -14,7 +14,7 @@
       "ZC/*": ["./components/*"],
       "ZL/*": ["./lib/*"],
       "ZP/*": ["./public/*"],
-      "ZU/*": ["./utils/*"],
+      "ZU/*": ["./utils/*"]
     },
     "plugins": [
       {
