@@ -1,14 +1,12 @@
-export default function RandomQuote() {
-  const quotes = [
-    `"I knew I was not reading upto my potential!" - Po`,
-    `"The only thing that matters is what you choose to read now." - Po`,
-  ];
-  const bookQuote = quotes[(Math.floor(Math.random() * quotes.length))];
+type Quote = {
+  bookQuote: string;
+};
 
+export default function RandomQuote({ bookQuote }: Quote) {
   return (
     <>
-      <p className="text-xs font-bold mb-4">I definitely think they were talking about Books...</p>
+      <p className="mb-4 text-xs font-bold">I definitely think they were talking about Books...</p>
       <p className="text-base">{bookQuote}</p>
     </>
-  )
+  );
 }
