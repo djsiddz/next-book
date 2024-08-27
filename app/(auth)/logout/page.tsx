@@ -14,7 +14,7 @@ export default function LogoutPage() {
   ];
   const bookQuote = quotes[Math.floor(Math.random() * quotes.length)];
 
-  const timeoutRef = useRef<NodeJS.Timeout | undefined>();
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | undefined>();
   const router = useRouter();
 
   useEffect(() => {
