@@ -19,8 +19,8 @@ function Campaign() {
   return (
     <>
       <Label htmlFor="campaign">Campaign</Label>
-      <Input type="text" id="campaign" value={campaign} name="campaign" readOnly required />
-      <p className="text-xs text-gray-600">This is for me to know how you found Next Book.</p>
+      <Input type="text" id="campaign" value={campaign} name="campaign" readOnly required disabled />
+      <p className="-mt-2 text-xs text-gray-600">This is for me to know how you found Next Book.</p>
     </>
   );
 }
