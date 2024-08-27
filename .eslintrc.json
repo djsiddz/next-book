@@ -81,10 +81,10 @@
         "message": "Use typed hooks `useAppDispatch` and `useAppSelector` instead."
       }
     ],
-    "@typescript-eslint/no-shadow": ["error"],
+    "@typescript-eslint/no-shadow": "error",
     "no-empty-function": "off",
     "@typescript-eslint/no-empty-function": ["error", { "allow": ["functions", "arrowFunctions", "methods"] }],
-
+    "@typescript-eslint/no-unsafe-return": "warn",
     // Import alias Plugin - rules available via `eslint-plugin-import-alias`.
     "import-alias/import-alias": [
       "error",
