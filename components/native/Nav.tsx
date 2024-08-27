@@ -79,9 +79,12 @@ export default function Nav() {
           </NavigationMenuContent>
         </NavigationMenuItem>
       </NavigationMenuList>
-      <Button asChild variant="outline" className="w-min">
-        <Link href="/login">Login</Link>
-      </Button>
+      <div className="flex flex-col-reverse items-end md:flex-row md:items-center">
+        <span className="text-[0.6rem] md:text-xs md:mr-4">Got off the waitlist?!</span>
+        <Button asChild variant="outline" className="w-min">
+          <Link href="/login">Login</Link>
+        </Button>
+      </div>
     </NavigationMenu>
   );
 }
