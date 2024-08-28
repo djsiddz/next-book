@@ -1,3 +1,4 @@
+import { ChevronRightSquareIcon } from "lucide-react";
 import Link from "next/link";
 import { Button } from "ZC/ui/button";
 
@@ -6,38 +7,39 @@ export default function Waitlist() {
     <>
       <div
         id="banner"
-        className="absolute top-0 flex w-full items-center justify-center space-x-20 overflow-x-clip bg-yellow-100 p-4"
+        className="absolute top-0 flex w-full items-center justify-center space-x-10 overflow-x-clip bg-yellow-100 p-4"
       >
-        <span>Waitlisted</span>
-        <span>Waitlisted</span>
-        <span>Waitlisted</span>
-        <span>Waitlisted</span>
-        <span>Waitlisted</span>
-        <span>Waitlisted</span>
-        <span>Waitlisted</span>
-        <span>Waitlisted</span>
-        <span>Waitlisted</span>
-        <span>Waitlisted</span>
-        <span>Waitlisted</span>
-        <span>Waitlisted</span>
-        <span>Waitlisted</span>
+        <span className="whitespace-nowrap">🚨 Waitlisted</span>
+        <span className="whitespace-nowrap">🚨 Waitlisted</span>
+        <span className="whitespace-nowrap">🚨 Waitlisted</span>
+        <span className="whitespace-nowrap">🚨 Waitlisted</span>
+        <span className="whitespace-nowrap">🚨 Waitlisted</span>
+        <span className="whitespace-nowrap">🚨 Waitlisted</span>
+        <span className="flex items-center"><ChevronRightSquareIcon size={36} className="inline" /> <span className="md:pl-3 text-xl whitespace-nowrap hidden md:visible md:flex">Next Book</span></span>
+        <span className="whitespace-nowrap">🚨 Waitlisted</span>
+        <span className="whitespace-nowrap">🚨 Waitlisted</span>
+        <span className="whitespace-nowrap">🚨 Waitlisted</span>
+        <span className="whitespace-nowrap">🚨 Waitlisted</span>
+        <span className="whitespace-nowrap">🚨 Waitlisted</span>
+        <span className="whitespace-nowrap">🚨 Waitlisted</span>
       </div>
-      <div className="flex min-h-screen flex-col items-start justify-center p-10 md:items-center">
-        <h1 className="text-balance text-xl">Hello, fellow reader of books!</h1>
+
+      <div className="flex mt-16 md:mt-0 min-h-screen flex-col items-start justify-center p-10 md:items-center md:text-center">
+        <h1 className="text-balance text-xl">Hello, fellow reader of the books! 👋</h1>
         <p className="mt-16">
-          I'm still working on <span className="font-bold">Next Book</span>. Once it is usable, I'll open up for private
-          beta, and you will slide off the Waitlist.
+          Thank you so much for joining the club! Once <strong>Next Book</strong> is usable, I'll open access for private
+          beta.
         </p>
+        <p className="mt-4">Make sure to check your inbox and <strong>verify your email</strong>. <br />That way you will get off the waitlist, faster! 😉</p>
         <p className="mt-4">
           You can follow me on{" "}
           <Link className="text-yellow-400 hover:underline" href="https://x.com/Super_Siddy">
             Twitter/X
           </Link>{" "}
-          for any updates, and to share ideas or just say Hi.
+          for updates, or tell me about the book you are currently reading! 📖
         </p>
-        <p className="mt-4">So, what are you reading currently?</p>
         <Button asChild variant="link" className="mt-8">
-          <Link href="https://github.com/djsiddz">- Sid</Link>
+          <Link href="https://github.com/djsiddz">- Sid 🧑‍💻</Link>
         </Button>
         <Button asChild className="mt-16">
           <Link href="/logout">Log Out</Link>
