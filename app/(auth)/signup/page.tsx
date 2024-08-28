@@ -1,7 +1,6 @@
 "use client";
 
 /* eslint-disable @typescript-eslint/no-misused-promises */
-import { Suspense } from "react";
 import { signupOnWaitlist } from "../login/actions";
 
 import { ChevronRightSquareIcon } from "lucide-react";
@@ -12,20 +11,9 @@ import { Button } from "ZC/ui/button";
 import { Input } from "ZC/ui/input";
 import { Label } from "ZC/ui/label";
 
-function Campaign() {
+export default function WaitlistPage() {
   const searchParams = useSearchParams();
   const campaign = searchParams.get("campaign") || "";
-
-  return (
-    <>
-      <Label htmlFor="campaign">Campaign</Label>
-      <Input type="text" id="campaign" value={campaign} name="campaign" readOnly required disabled />
-      <p className="-mt-2 text-xs text-gray-600">This is for me to know how you found Next Book.</p>
-    </>
-  );
-}
-
-export default function WaitlistPage() {
   return (
     <div className="flex min-h-screen min-w-full flex-col md:flex-row">
       <div className="flex w-full items-center justify-center bg-yellow-100 p-10 md:w-1/2">
@@ -43,9 +31,7 @@ export default function WaitlistPage() {
             <Input type="email" id="email" placeholder="Email" name="email" required />
             <Label htmlFor="password">Password</Label>
             <Input type="password" id="password" placeholder="Password" name="password" required />
-            <Suspense fallback={<p>Verifying...</p>}>
-              <Campaign />
-            </Suspense>
+            <Input type="hidden" id="campaign" value={campaign} name="campaign" readOnly required />
           </div>
           <Button className="w-full py-3" formAction={signupOnWaitlist}>
             Join the Waitlist!
