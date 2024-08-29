@@ -44,7 +44,7 @@ export default function DashboardNav({ email }: { email: string | undefined }) {
         <NavigationMenuList>
           <NavigationMenuItem>
             <Button asChild variant="outline" className="w-min">
-              <Link href="/dashboard/new">Add New Book</Link>
+              <Link href="/dashboard/new">Add Book</Link>
             </Button>
           </NavigationMenuItem>
           <NavigationMenuItem>
