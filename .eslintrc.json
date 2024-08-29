@@ -94,6 +94,7 @@
           { "alias": "ZC", "matcher": "./components/" },
           { "alias": "ZL", "matcher": "./lib/" },
           { "alias": "ZP", "matcher": "./public/" },
+          { "alias": "ZT", "matcher": "./types/" },
           { "alias": "ZU", "matcher": "./utils/" }
         ]
       }

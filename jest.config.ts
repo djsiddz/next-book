@@ -100,6 +100,7 @@ const config: Config = {
     "^ZC/(.*)$": "<rootDir>/components/$1",
     "^ZL/(.*)$": "<rootDir>/lib/$1",
     "^ZP/(.*)$": "<rootDir>/public/$1",
+    "^ZT/(.*)$": "<rootDir>/types/$1",
     "^ZU/(.*)$": "<rootDir>/utils/$1",
   },
 
