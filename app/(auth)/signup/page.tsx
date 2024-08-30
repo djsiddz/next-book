@@ -1,6 +1,7 @@
 "use client";
 
 /* eslint-disable @typescript-eslint/no-misused-promises */
+import { Suspense } from "react";
 import { signupOnWaitlist } from "../login/actions";
 
 import { ChevronRightSquareIcon } from "lucide-react";
@@ -31,7 +32,9 @@ export default function WaitlistPage() {
             <Input type="email" id="email" placeholder="Email" name="email" required />
             <Label htmlFor="password">Password</Label>
             <Input type="password" id="password" placeholder="Password" name="password" required />
-            <Input type="hidden" id="campaign" value={campaign} name="campaign" readOnly required />
+            <Suspense fallback={<Input type="hidden" id="campaign" value={''} name="campaign" readOnly required />}>
+              <Input type="hidden" id="campaign" value={campaign} name="campaign" readOnly required />
+            </Suspense>
           </div>
           <Button className="w-full py-3" formAction={signupOnWaitlist}>
             Join the Waitlist!
