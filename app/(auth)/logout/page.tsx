@@ -1,23 +1,25 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { logout } from "../login/actions";
 
 import { ChevronRightSquareIcon } from "lucide-react";
 
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 export default function LogoutPage() {
+  const [bookQuote, setBookQuote] = useState('');
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | undefined>();
+  const router = useRouter();
+
   const quotes = [
     `"I knew I was not reading upto my potential!" - Po`,
     `"The only thing that matters is what you choose to read now." - Po`,
   ];
-  const bookQuote = quotes[Math.floor(Math.random() * quotes.length)];
-
-  const timeoutRef = useRef<NodeJS.Timeout | undefined>();
-  const router = useRouter();
 
   useEffect(() => {
+    setBookQuote(quotes[Math.floor(Math.random() * quotes.length)]);
     logout().catch(console.error);
 
     timeoutRef.current = setTimeout(() => {
@@ -42,7 +44,7 @@ export default function LogoutPage() {
         <h2 className="mb-8 text-2xl">See you later!</h2>
         <p>
           Catch a breath. Have a great day! 👋 <br />
-          Redirecting you to home page in 10 seconds
+          Redirecting you to <Link href={"/"}>Home Page</Link> in 10 seconds
           <br />
           Or you can close the tab.
         </p>

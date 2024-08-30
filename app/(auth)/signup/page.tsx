@@ -12,16 +12,12 @@ import { Button } from "ZC/ui/button";
 import { Input } from "ZC/ui/input";
 import { Label } from "ZC/ui/label";
 
-function Campaign() {
+function CampaignInput() {
   const searchParams = useSearchParams();
   const campaign = searchParams.get("campaign") || "";
 
   return (
-    <>
-      <Label htmlFor="campaign">Campaign</Label>
-      <Input type="text" id="campaign" value={campaign} name="campaign" readOnly required />
-      <p className="text-xs text-gray-600">This is for me to know how you found Next Book.</p>
-    </>
+    <Input type="hidden" id="campaign" value={campaign} name="campaign" readOnly required />
   );
 }
 
@@ -43,8 +39,8 @@ export default function WaitlistPage() {
             <Input type="email" id="email" placeholder="Email" name="email" required />
             <Label htmlFor="password">Password</Label>
             <Input type="password" id="password" placeholder="Password" name="password" required />
-            <Suspense fallback={<p>Verifying...</p>}>
-              <Campaign />
+            <Suspense>
+              <CampaignInput />
             </Suspense>
           </div>
           <Button className="w-full py-3" formAction={signupOnWaitlist}>

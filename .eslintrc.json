@@ -4,7 +4,7 @@
     "es2021": true,
     "node": true
   },
-  "extends": ["next/core-web-vitals", "plugin:@typescript-eslint/recommended", "prettier", "plugin:react/jsx-runtime"],
+  "extends": ["next/core-web-vitals", "plugin:@typescript-eslint/recommended", "prettier", "plugin:react/jsx-runtime", "plugin:testing-library/react", "plugin:jest-dom/recommended"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
@@ -81,10 +81,10 @@
         "message": "Use typed hooks `useAppDispatch` and `useAppSelector` instead."
       }
     ],
-    "@typescript-eslint/no-shadow": ["error"],
+    "@typescript-eslint/no-shadow": "error",
     "no-empty-function": "off",
     "@typescript-eslint/no-empty-function": ["error", { "allow": ["functions", "arrowFunctions", "methods"] }],
-
+    "@typescript-eslint/no-unsafe-return": "warn",
     // Import alias Plugin - rules available via `eslint-plugin-import-alias`.
     "import-alias/import-alias": [
       "error",
@@ -94,6 +94,7 @@
           { "alias": "ZC", "matcher": "./components/" },
           { "alias": "ZL", "matcher": "./lib/" },
           { "alias": "ZP", "matcher": "./public/" },
+          { "alias": "ZT", "matcher": "./types/" },
           { "alias": "ZU", "matcher": "./utils/" }
         ]
       }

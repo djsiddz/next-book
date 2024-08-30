@@ -1,14 +1,12 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
-import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 
 import { createClient } from "ZU/supabase/server";
 
 export async function login(formData: FormData) {
-  const cookieStore = cookies();
-  const supabase = createClient(cookieStore);
+  const supabase = createClient();
 
   // Type-casting here for convenience
   // in practice, you should validate your inputs
@@ -31,8 +29,7 @@ export async function login(formData: FormData) {
 }
 
 export async function signupOnWaitlist(formData: FormData) {
-  const cookieStore = cookies();
-  const supabase = createClient(cookieStore);
+  const supabase = createClient();
 
   // Type-casting here for convenience
   // in practice, you should validate your inputs
@@ -64,8 +61,7 @@ export async function signupOnWaitlist(formData: FormData) {
 }
 
 export async function signup(formData: FormData) {
-  const cookieStore = cookies();
-  const supabase = createClient(cookieStore);
+  const supabase = createClient();
 
   // Type-casting here for convenience
   // in practice, you should validate your inputs
@@ -88,8 +84,7 @@ export async function signup(formData: FormData) {
 }
 
 export async function logout() {
-  const cookieStore = cookies();
-  const supabase = createClient(cookieStore);
+  const supabase = createClient();
 
   const { error } = await supabase.auth.signOut();
   console.error(error);
