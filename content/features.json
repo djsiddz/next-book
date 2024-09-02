@@ -1,0 +1,24 @@
+{
+  "features": [
+    {
+      "key": "allBooks",
+      "title": "All Books in one view",
+      "body": "Bring all your books. We'll make sure you can remember how you got a book! And where it is currently."
+    },
+    {
+      "key": "trackProgress",
+      "title": "Track your progress",
+      "body": "Test paragraph to see how this works"
+    },
+    {
+      "key": "buildHabit",
+      "title": "Build a reading habit",
+      "body": "Test paragraph to see how this works"
+    },
+    {
+      "key": "recommendationsFromAI",
+      "title": "Get AI recommendations",
+      "body": "Test paragraph to see how this works"
+    }
+  ]
+}
