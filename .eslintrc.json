@@ -4,7 +4,14 @@
     "es2021": true,
     "node": true
   },
-  "extends": ["next/core-web-vitals", "plugin:@typescript-eslint/recommended", "prettier", "plugin:react/jsx-runtime", "plugin:testing-library/react", "plugin:jest-dom/recommended"],
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/jsx-runtime",
+    "plugin:testing-library/react",
+    "plugin:jest-dom/recommended",
+    "prettier"
+  ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
@@ -14,7 +21,9 @@
     "sourceType": "module"
   },
   "overrides": [
-    { "files": ["*.js", "*.jsx"] },
+    {
+      "files": ["*.js", "*.jsx"]
+    },
     {
       "files": ["*.ts", "*.tsx"],
       "extends": [
@@ -33,11 +42,30 @@
   "rules": {
     // General
     "array-callback-return": "warn",
-    "capitalized-comments": ["error", "always", { "line": { "ignoreConsecutiveComments": true } }],
+    "capitalized-comments": [
+      "error",
+      "always",
+      {
+        "line": {
+          "ignoreConsecutiveComments": true
+        }
+      }
+    ],
     "default-param-last": "error",
-    "id-length": ["warn", { "properties": "never", "exceptionPatterns": ["^_"] }],
-    "max-lines": ["error", { "max": 250, "skipBlankLines": true, "skipComments": true }],
-    "no-console": ["error", { "allow": ["warn", "error"] }],
+    "max-lines": [
+      "error",
+      {
+        "max": 250,
+        "skipBlankLines": true,
+        "skipComments": true
+      }
+    ],
+    "no-console": [
+      "error",
+      {
+        "allow": ["warn", "error"]
+      }
+    ],
     "no-multi-assign": "error",
     "no-multi-spaces": "error",
     "no-negated-condition": "off",
@@ -45,33 +73,44 @@
     "no-prototype-builtins": "warn",
     "no-restricted-imports": "warn",
     "no-shadow": "off",
-    "no-underscore-dangle": ["warn", { "allow": ["_id"] }],
+    "no-underscore-dangle": [
+      "warn",
+      {
+        "allow": ["_id"]
+      }
+    ],
     "no-var": "error",
     "object-shorthand": "warn",
     "one-var": ["error", "never"],
     "prefer-const": "error",
     "prefer-destructuring": "error",
     "prefer-object-spread": "warn",
-
     // React Plugin - rules available via `eslint-plugin-react`.
     "react/jsx-boolean-value": "warn",
     "react/jsx-closing-tag-location": "error",
     "react/jsx-curly-spacing": "error",
-    "react/jsx-filename-extension": ["error", { "extensions": [".tsx", ".jsx"] }],
+    "react/jsx-filename-extension": [
+      "error",
+      {
+        "extensions": [".tsx", ".jsx"]
+      }
+    ],
     "react/jsx-pascal-case": "error",
     "react/jsx-tag-spacing": "error",
     "react/jsx-wrap-multilines": "warn",
     "react/no-array-index-key": "warn",
-    "react/no-multi-comp": ["error", { "ignoreStateless": true }],
+    "react/no-multi-comp": [
+      "error",
+      {
+        "ignoreStateless": true
+      }
+    ],
     "react/no-unescaped-entities": "off",
     "react/style-prop-object": "off",
-
     // React Hooks Plugin - rules available via `eslint-plugin-react-hooks`.
     "react-hooks/exhaustive-deps": "warn",
-
     // Import Resolver TypeScript = rules available via `eslint-import-resolver-typescript`
     "import/no-unresolved": "error",
-
     // Typescript Plugin - rules available via `@typescript-eslint`.
     "@typescript-eslint/no-restricted-imports": [
       "warn",
@@ -83,7 +122,12 @@
     ],
     "@typescript-eslint/no-shadow": "error",
     "no-empty-function": "off",
-    "@typescript-eslint/no-empty-function": ["error", { "allow": ["functions", "arrowFunctions", "methods"] }],
+    "@typescript-eslint/no-empty-function": [
+      "error",
+      {
+        "allow": ["functions", "arrowFunctions", "methods"]
+      }
+    ],
     "@typescript-eslint/no-unsafe-return": "warn",
     // Import alias Plugin - rules available via `eslint-plugin-import-alias`.
     "import-alias/import-alias": [
@@ -91,11 +135,26 @@
       {
         "relativeDepth": 2,
         "aliases": [
-          { "alias": "ZC", "matcher": "./components/" },
-          { "alias": "ZL", "matcher": "./lib/" },
-          { "alias": "ZP", "matcher": "./public/" },
-          { "alias": "ZT", "matcher": "./types/" },
-          { "alias": "ZU", "matcher": "./utils/" }
+          {
+            "alias": "ZC",
+            "matcher": "./components/"
+          },
+          {
+            "alias": "ZL",
+            "matcher": "./lib/"
+          },
+          {
+            "alias": "ZP",
+            "matcher": "./public/"
+          },
+          {
+            "alias": "ZT",
+            "matcher": "./types/"
+          },
+          {
+            "alias": "ZU",
+            "matcher": "./utils/"
+          }
         ]
       }
     ],
@@ -103,7 +162,10 @@
     "import/order": [
       "warn",
       {
-        "alphabetize": { "order": "asc", "caseInsensitive": true }
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
       }
     ]
   },

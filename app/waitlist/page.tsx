@@ -15,7 +15,10 @@ export default function Waitlist() {
         <span className="whitespace-nowrap">🚨 Waitlisted</span>
         <span className="whitespace-nowrap">🚨 Waitlisted</span>
         <span className="whitespace-nowrap">🚨 Waitlisted</span>
-        <span className="flex items-center"><ChevronRightSquareIcon size={36} className="inline" /> <span className="md:pl-3 text-xl whitespace-nowrap hidden md:visible md:flex">Next Book</span></span>
+        <span className="flex items-center">
+          <ChevronRightSquareIcon size={36} className="inline" />{" "}
+          <span className="hidden whitespace-nowrap text-xl md:visible md:flex md:pl-3">Next Book</span>
+        </span>
         <span className="whitespace-nowrap">🚨 Waitlisted</span>
         <span className="whitespace-nowrap">🚨 Waitlisted</span>
         <span className="whitespace-nowrap">🚨 Waitlisted</span>
@@ -24,13 +27,16 @@ export default function Waitlist() {
         <span className="whitespace-nowrap">🚨 Waitlisted</span>
       </div>
 
-      <div className="flex mt-16 md:mt-0 min-h-screen flex-col items-start justify-center p-10 md:items-center md:text-center">
+      <div className="mt-16 flex min-h-screen flex-col items-start justify-center p-10 md:mt-0 md:items-center md:text-center">
         <h1 className="text-balance text-xl">Hello, fellow reader of the books! 👋</h1>
         <p className="mt-16">
-          Thank you so much for joining the club! Once <strong>Next Book</strong> is usable, I'll open access for private
-          beta.
+          Thank you so much for joining the club! Once <strong>Next Book</strong> is usable, I'll open access for
+          private beta.
         </p>
-        <p className="mt-4">Make sure to check your inbox and <strong>verify your email</strong>. <br />That way you will get off the waitlist, faster! 😉</p>
+        <p className="mt-4">
+          Make sure to check your inbox and <strong>verify your email</strong>. <br />
+          That way you will get off the waitlist, faster! 😉
+        </p>
         <p className="mt-4">
           You can follow me on{" "}
           <Link className="text-yellow-400 hover:underline" href="https://x.com/Super_Siddy">

@@ -26,7 +26,7 @@ export default function DashboardNav({ email }: { email: string | undefined }) {
           <NavigationMenuItem className="mr-10 flex items-center">
             <Link href="/dashboard" legacyBehavior passHref>
               <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                <ChevronRightSquareIcon size={36} className="inline" /> <span className=" pl-3 text-xl">Next Book</span>
+                <ChevronRightSquareIcon size={36} className="inline" /> <span className="pl-3 text-xl">Next Book</span>
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>

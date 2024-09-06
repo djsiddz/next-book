@@ -22,7 +22,7 @@ export default function Nav() {
       <NavigationMenuList>
         <NavigationMenuItem id="mobile-nav" className="visible flex items-center md:hidden">
           <NavigationMenuTrigger className="pl-0">
-            <ChevronRightSquareIcon size={36} className="inline" /> <span className=" pl-3 text-xl">Next Book</span>
+            <ChevronRightSquareIcon size={36} className="inline" /> <span className="pl-3 text-xl">Next Book</span>
           </NavigationMenuTrigger>
           <NavigationMenuContent className="p-2">
             <ul className="grid w-[280px] gap-2 md:w-[500px] md:grid-cols-2">
@@ -45,7 +45,7 @@ export default function Nav() {
         <NavigationMenuItem id="desktop-logo" className="hidden items-center md:visible md:flex">
           <Link href="/" legacyBehavior passHref>
             <NavigationMenuLink className={`px-0 md:mr-10 ${navigationMenuTriggerStyle()}`}>
-              <ChevronRightSquareIcon size={36} className="inline" /> <span className=" pl-3 text-xl">Next Book</span>
+              <ChevronRightSquareIcon size={36} className="inline" /> <span className="pl-3 text-xl">Next Book</span>
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
@@ -80,7 +80,7 @@ export default function Nav() {
         </NavigationMenuItem>
       </NavigationMenuList>
       <div className="flex flex-col-reverse items-end md:flex-row md:items-center">
-        <span className="text-[0.6rem] md:text-xs md:mr-4">Got off the waitlist?!</span>
+        <span className="text-[0.6rem] md:mr-4 md:text-xs">Got off the waitlist?!</span>
         <Button asChild variant="outline" className="w-min">
           <Link href="/login">Login</Link>
         </Button>

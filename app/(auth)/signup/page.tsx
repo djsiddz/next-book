@@ -16,9 +16,7 @@ function CampaignInput() {
   const searchParams = useSearchParams();
   const campaign = searchParams.get("campaign") || "";
 
-  return (
-    <Input type="hidden" id="campaign" value={campaign} name="campaign" readOnly required />
-  );
+  return <Input type="hidden" id="campaign" value={campaign} name="campaign" readOnly required />;
 }
 
 export default function WaitlistPage() {

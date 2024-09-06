@@ -4,7 +4,7 @@ import { cn } from "ZL/utils";
 // Code changed
 // export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {}
 // to resolve typescript error: An interface declaring no members is equivalent to its supertype. eslint@typescript-eslint/no-empty-object-type
-export type InputProps = React.InputHTMLAttributes<HTMLInputElement>
+export type InputProps = React.InputHTMLAttributes<HTMLInputElement>;
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(({ className, type, ...props }, ref) => {
   return (

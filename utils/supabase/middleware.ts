@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
-import { createServerClient } from '@supabase/ssr';
-import { NextResponse, type NextRequest } from 'next/server';
+import { createServerClient } from "@supabase/ssr";
+import { NextResponse, type NextRequest } from "next/server";
 
 export async function updateSession(request: NextRequest) {
   let supabaseResponse = NextResponse.next({
@@ -17,13 +17,11 @@ export async function updateSession(request: NextRequest) {
         },
         setAll(cookiesToSet) {
           // eslint-disable-next-line @typescript-eslint/no-unused-vars
-          cookiesToSet.forEach(({ name, value, options }) => request.cookies.set(name, value))
+          cookiesToSet.forEach(({ name, value, options }) => request.cookies.set(name, value));
           supabaseResponse = NextResponse.next({
             request,
-          })
-          cookiesToSet.forEach(({ name, value, options }) =>
-            supabaseResponse.cookies.set(name, value, options)
-          )
+          });
+          cookiesToSet.forEach(({ name, value, options }) => supabaseResponse.cookies.set(name, value, options));
         },
       },
     },
@@ -33,7 +31,7 @@ export async function updateSession(request: NextRequest) {
   // supabase.auth.getUser(). A simple mistake could make it very hard to debug
   // issues with users being randomly logged out.
 
-    const {
+  const {
     data: { user },
   } = await supabase.auth.getUser();
 
@@ -51,11 +49,7 @@ export async function updateSession(request: NextRequest) {
 
   // Custom - Check Waitlist status for user
   // Fetch the user's waitlist entry
-  const { data: waitlistStatus } = await supabase
-    .from("profiles")
-    .select("approved")
-    .eq("user_id", user?.id)
-    .single();
+  const { data: waitlistStatus } = await supabase.from("profiles").select("approved").eq("user_id", user?.id).single();
 
   // The user is approved, allow access to dashboard
   // eslint-disable-next-line no-console
@@ -77,5 +71,5 @@ export async function updateSession(request: NextRequest) {
   // If this is not done, you may be causing the browser and server to go out
   // of sync and terminate the user's session prematurely!
 
-  return supabaseResponse
+  return supabaseResponse;
 }

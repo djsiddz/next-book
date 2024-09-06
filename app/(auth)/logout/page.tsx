@@ -9,7 +9,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 export default function LogoutPage() {
-  const [bookQuote, setBookQuote] = useState('');
+  const [bookQuote, setBookQuote] = useState("");
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | undefined>();
   const router = useRouter();
 
