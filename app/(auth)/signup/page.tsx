@@ -1,16 +1,16 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
 "use client";
 
+import { Suspense } from "react";
 import { ChevronRightSquareIcon } from "lucide-react";
 
 import { useSearchParams } from "next/navigation";
-import { Suspense } from "react";
 
-import { signupOnWaitlist } from "../login/actions";
 
 import { Button } from "ZC/ui/button";
 import { Input } from "ZC/ui/input";
 import { Label } from "ZC/ui/label";
+import { signupOnWaitlist } from "../login/actions";
 
 function CampaignInput() {
   const searchParams = useSearchParams();

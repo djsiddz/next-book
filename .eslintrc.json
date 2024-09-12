@@ -162,6 +162,40 @@
     "import/order": [
       "warn",
       {
+        "groups": ["builtin", "external", "internal", ["parent", "sibling", "index"]],
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "group": "external",
+            "position": "before"
+          },
+          {
+            "pattern": "ZC/**",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "ZL/**",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "ZP/**",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "ZT/**",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "ZU/**",
+            "group": "internal",
+            "position": "after"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["react"],
         "alphabetize": {
           "order": "asc",
           "caseInsensitive": true

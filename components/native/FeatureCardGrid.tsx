@@ -1,7 +1,7 @@
 import { BookCheckIcon, BoxesIcon, SparklesIcon, Tally5Icon } from "lucide-react";
 
-import FeatureCard from "./FeatureCard";
 import { featuresContent } from "ZL/content";
+import FeatureCard from "./FeatureCard";
 
 export default function FeatureCardGrid() {
   // TODO: Find a better way to handle icons?
