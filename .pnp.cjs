@@ -44,6 +44,7 @@ const RAW_RUNTIME_STATE =
           ["@types/react-dom", "npm:18.3.0"],\
           ["@typescript-eslint/eslint-plugin", "virtual:6522947f86ef2d1f0dc4dac0143511a1610d3c6fd49a3aeaaecd72bce718a4bd764b42d025a3f7ec41e15845307aaf3324b8d2fc7be6e5b9cf662790bf860770#npm:8.5.0"],\
           ["@typescript-eslint/parser", "virtual:6522947f86ef2d1f0dc4dac0143511a1610d3c6fd49a3aeaaecd72bce718a4bd764b42d025a3f7ec41e15845307aaf3324b8d2fc7be6e5b9cf662790bf860770#npm:8.5.0"],\
+          ["@vercel/speed-insights", "virtual:6522947f86ef2d1f0dc4dac0143511a1610d3c6fd49a3aeaaecd72bce718a4bd764b42d025a3f7ec41e15845307aaf3324b8d2fc7be6e5b9cf662790bf860770#npm:1.0.12"],\
           ["autoprefixer", "virtual:6522947f86ef2d1f0dc4dac0143511a1610d3c6fd49a3aeaaecd72bce718a4bd764b42d025a3f7ec41e15845307aaf3324b8d2fc7be6e5b9cf662790bf860770#npm:10.4.20"],\
           ["better-commits", "npm:1.15.7"],\
           ["class-variance-authority", "npm:0.7.0"],\
@@ -3141,6 +3142,48 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../.yarn/berry/cache/@ungap-structured-clone-npm-1.2.0-648f0b82e0-10c0.zip/node_modules/@ungap/structured-clone/",\
         "packageDependencies": [\
           ["@ungap/structured-clone", "npm:1.2.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@vercel/speed-insights", [\
+      ["npm:1.0.12", {\
+        "packageLocation": "./.yarn/unplugged/@vercel-speed-insights-virtual-25d7a8762a/node_modules/@vercel/speed-insights/",\
+        "packageDependencies": [\
+          ["@vercel/speed-insights", "npm:1.0.12"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:6522947f86ef2d1f0dc4dac0143511a1610d3c6fd49a3aeaaecd72bce718a4bd764b42d025a3f7ec41e15845307aaf3324b8d2fc7be6e5b9cf662790bf860770#npm:1.0.12", {\
+        "packageLocation": "./.yarn/unplugged/@vercel-speed-insights-virtual-25d7a8762a/node_modules/@vercel/speed-insights/",\
+        "packageDependencies": [\
+          ["@vercel/speed-insights", "virtual:6522947f86ef2d1f0dc4dac0143511a1610d3c6fd49a3aeaaecd72bce718a4bd764b42d025a3f7ec41e15845307aaf3324b8d2fc7be6e5b9cf662790bf860770#npm:1.0.12"],\
+          ["@sveltejs/kit", null],\
+          ["@types/next", "npm:9.0.0"],\
+          ["@types/react", "npm:18.3.5"],\
+          ["@types/svelte", null],\
+          ["@types/sveltejs__kit", null],\
+          ["@types/vue", null],\
+          ["@types/vue-router", null],\
+          ["next", "virtual:6522947f86ef2d1f0dc4dac0143511a1610d3c6fd49a3aeaaecd72bce718a4bd764b42d025a3f7ec41e15845307aaf3324b8d2fc7be6e5b9cf662790bf860770#npm:14.2.10"],\
+          ["react", "npm:18.3.1"],\
+          ["svelte", null],\
+          ["vue", null],\
+          ["vue-router", null]\
+        ],\
+        "packagePeers": [\
+          "@sveltejs/kit",\
+          "@types/next",\
+          "@types/react",\
+          "@types/svelte",\
+          "@types/sveltejs__kit",\
+          "@types/vue-router",\
+          "@types/vue",\
+          "next",\
+          "react",\
+          "svelte",\
+          "vue-router",\
+          "vue"\
         ],\
         "linkType": "HARD"\
       }]\
@@ -8242,6 +8285,7 @@ const RAW_RUNTIME_STATE =
           ["@types/react-dom", "npm:18.3.0"],\
           ["@typescript-eslint/eslint-plugin", "virtual:6522947f86ef2d1f0dc4dac0143511a1610d3c6fd49a3aeaaecd72bce718a4bd764b42d025a3f7ec41e15845307aaf3324b8d2fc7be6e5b9cf662790bf860770#npm:8.5.0"],\
           ["@typescript-eslint/parser", "virtual:6522947f86ef2d1f0dc4dac0143511a1610d3c6fd49a3aeaaecd72bce718a4bd764b42d025a3f7ec41e15845307aaf3324b8d2fc7be6e5b9cf662790bf860770#npm:8.5.0"],\
+          ["@vercel/speed-insights", "virtual:6522947f86ef2d1f0dc4dac0143511a1610d3c6fd49a3aeaaecd72bce718a4bd764b42d025a3f7ec41e15845307aaf3324b8d2fc7be6e5b9cf662790bf860770#npm:1.0.12"],\
           ["autoprefixer", "virtual:6522947f86ef2d1f0dc4dac0143511a1610d3c6fd49a3aeaaecd72bce718a4bd764b42d025a3f7ec41e15845307aaf3324b8d2fc7be6e5b9cf662790bf860770#npm:10.4.20"],\
           ["better-commits", "npm:1.15.7"],\
           ["class-variance-authority", "npm:0.7.0"],\
