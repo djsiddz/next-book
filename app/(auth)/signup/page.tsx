@@ -1,12 +1,12 @@
-"use client";
-
 /* eslint-disable @typescript-eslint/no-misused-promises */
-import { Suspense } from "react";
-import { signupOnWaitlist } from "../login/actions";
+"use client";
 
 import { ChevronRightSquareIcon } from "lucide-react";
 
 import { useSearchParams } from "next/navigation";
+import { Suspense } from "react";
+
+import { signupOnWaitlist } from "../login/actions";
 
 import { Button } from "ZC/ui/button";
 import { Input } from "ZC/ui/input";

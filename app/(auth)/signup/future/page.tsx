@@ -1,8 +1,9 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
-import { signup } from "../../login/actions";
-
 import { ChevronRightSquareIcon } from "lucide-react";
+
 import Link from "next/link";
+
+import { signup } from "../../login/actions";
 
 import { Button } from "ZC/ui/button";
 import { Input } from "ZC/ui/input";

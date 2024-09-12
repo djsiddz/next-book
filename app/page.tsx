@@ -1,11 +1,11 @@
 "use client";
 
-import {marketingHomepageContent as marketingContent} from "../content";
 import Link from "next/link";
 
 import FeatureCardGrid from "ZC/native/FeatureCardGrid";
 import Nav from "ZC/native/Nav";
 import { Button } from "ZC/ui/button";
+import { marketingHomepageContent as marketingContent } from "ZL/content";
 
 export default function Home() {
   return (
