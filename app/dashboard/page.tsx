@@ -1,4 +1,4 @@
-import { Button } from "ZC/ui/button";
+import { BookSearch } from "ZC/native/BookSearch";
 
 export default function Dashboard() {
   return (
@@ -8,7 +8,9 @@ export default function Dashboard() {
         It's nice to see you here. 😄
         <br /> Now let's bring your books collection here.
       </p>
-      <Button className="mt-8">Add Your First Book</Button>
+      <div className="mt-8">
+        <BookSearch buttonVariant={"default"} searchButtonLabel="Add Your First Book" />
+      </div>
     </div>
   );
 }

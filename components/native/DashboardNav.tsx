@@ -5,7 +5,6 @@ import { ChevronRightSquareIcon } from "lucide-react";
 
 import Link from "next/link";
 
-import { Button } from "ZC/ui/button";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -17,6 +16,7 @@ import {
 } from "ZC/ui/navigation-menu";
 import { profileLinks } from "ZL/constants";
 import { cn } from "ZL/utils";
+import { BookSearch } from "./BookSearch";
 
 export default function DashboardNav({ email }: { email: string | undefined }) {
   return (
@@ -43,9 +43,7 @@ export default function DashboardNav({ email }: { email: string | undefined }) {
       <NavigationMenu className="flex">
         <NavigationMenuList>
           <NavigationMenuItem>
-            <Button asChild variant="outline" className="w-min">
-              <Link href="/dashboard/new">Add Book</Link>
-            </Button>
+            <BookSearch searchButtonLabel="Add New Book" />
           </NavigationMenuItem>
           <NavigationMenuItem>
             <NavigationMenuTrigger>{email}</NavigationMenuTrigger>
