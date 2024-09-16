@@ -18,7 +18,8 @@ export default function LogoutPage() {
   ];
 
   useEffect(() => {
-    setBookQuote(quotes[Math.floor(Math.random() * quotes.length)]);
+    // The ! is a non-null assertion, which tells the compiler that the value is not null and not undefined.
+    setBookQuote(quotes[Math.floor(Math.random() * quotes.length)]!);
     logout().catch(console.error);
 
     timeoutRef.current = setTimeout(() => {

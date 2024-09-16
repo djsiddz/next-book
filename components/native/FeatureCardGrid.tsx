@@ -5,6 +5,7 @@ import FeatureCard from "./FeatureCard";
 
 export default function FeatureCardGrid() {
   // TODO: Find a better way to handle icons?
+  // When passing the icon to the FeatureCard, the ! is a non-null assertion has been added as a hack.
   const iconSet = [
     <BoxesIcon key={"boxIcon"} size={48} className="text-yellow-500" />,
     <BookCheckIcon key={"bookCheckIcon"} size={48} className="text-yellow-500" />,
@@ -14,7 +15,7 @@ export default function FeatureCardGrid() {
   return (
     <div className="mt-16 flex flex-col gap-4 md:grid md:grid-cols-2">
       {featuresContent.features.map((feature, index) => (
-        <FeatureCard {...feature} key={feature.key} Icon={iconSet[index]} />
+        <FeatureCard {...feature} key={feature.key} Icon={iconSet[index]!} />
       ))}
     </div>
   );
