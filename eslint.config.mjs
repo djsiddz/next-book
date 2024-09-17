@@ -34,7 +34,15 @@ const nextCoreWebVitalsFix = addNameToEachConfig(
 const tsConfig = addNameToEachConfig(
   "typescript-custom",
   ts.config(ts.configs.eslintRecommended, ...ts.configs.recommendedTypeChecked, {
-    files: ["*.ts", "*.tsx"],
+    files: ["**/*.ts", "**/*.tsx"],
+    languageOptions: {
+      parser: ts.parser,
+      parserOptions: {
+        project: "./tsconfig.json",
+        ecmaVersion: "latest",
+        sourceType: "module",
+      },
+    },
     rules: {
       "@typescript-eslint/no-shadow": ["error"],
       "no-shadow": "off",
@@ -55,17 +63,17 @@ export default [
     name: "files-ignore",
     ignores: [
       "lib/**",
-      "**/*.d.ts",
-      "**/*.test.ts(x)?",
-      "**/*.config.js",
       "scripts/**",
-      "*.config.mjs",
-      "**/*pnp*",
-      ".prettierrc.cjs",
       ".yarn/**",
       ".next/**",
       "coverage/**",
       "__tests__/**",
+      "**/*pnp*",
+      "**/*.d.ts",
+      "**/*.test.ts(x)?",
+      "**/*.config.js",
+      "*.config.mjs",
+      ".prettierrc.cjs",
     ],
   },
   ...reactFix,
@@ -79,6 +87,7 @@ export default [
   {
     name: "global-custom",
     languageOptions: {
+      parser: ts.parser,
       parserOptions: {
         ecmaFeatures: { jsx: true },
         project: "./tsconfig.json",
@@ -94,6 +103,7 @@ export default [
     },
     plugins: {
       "import-alias": fixupPluginRules(importAlias),
+      import: fixupPluginRules(importConfig),
     },
     rules: {
       "array-callback-return": "warn",
@@ -124,6 +134,7 @@ export default [
       "react/no-array-index-key": "warn",
       "react/no-multi-comp": ["error", { ignoreStateless: true }],
       "react/no-unescaped-entities": "off",
+      "react/prop-types": "off",
       "react/style-prop-object": "off",
 
       // Import
@@ -154,15 +165,17 @@ export default [
     settings: {
       "import/resolver": {
         node: { extensions: [".js", ".jsx", ".ts", ".tsx"] },
-        typescript: {
-          // Check below two are required or not
-          alwaysTryTypes: true, // always try to resolve types under `<root>@types` directory even it doesn't contain any source code, like `@types/unist`
-          project: "./",
-        },
+        typescript: {},
       },
       "import/extensions": [".js", ".jsx", ".ts", ".tsx"],
       "import/parsers": {
+        // Using espree as a fix as per: https://github.com/import-js/eslint-plugin-import/issues/2556#issuecomment-2272395246
+        espree: [".js", ".cjs", ".mjs", ".jsx"],
         "@typescript-eslint/parser": [".ts", ".tsx"],
+      },
+      "import/order": {
+        groups: ["builtin", "external", "internal", "parent", "sibling", "index"],
+        "newlines-between": "always",
       },
       react: {
         version: "detect",

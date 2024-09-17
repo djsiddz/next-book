@@ -1,20 +1,10 @@
 {
-  "typescript.tsdk": ".yarn/sdks/typescript/lib",
+  "typescript.tsdk": "node_modules/typescript/lib",
   "typescript.enablePromptUseWorkspaceTsdk": true,
-  "search.exclude": {
-    "**/.yarn": true,
-    "**/.pnp.*": true
-  },
-  "eslint.nodePath": ".yarn/sdks",
-  "prettier.prettierPath": ".yarn/sdks/prettier/index.cjs",
-  "tailwindCSS.experimental.classRegex": [
-    [
-      "cva\\(([^)]*)\\)",
-      "[\"'`]([^\"'`]*).*?[\"'`]"
-    ]
-  ],
-  "cSpell.words": [
-    "Waitlist",
-    "Waitlisted"
-  ]
+  "eslint.nodePath": "/home/sid/.volta/bin/node",
+  "eslint.codeActionsOnSave.mode": "all",
+  "prettier.prettierPath": "node_modules/prettier/index.cjs",
+  "tailwindCSS.experimental.classRegex": [["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"]],
+  "cSpell.words": ["clsx", "compat", "espree", "lucide", "supabase", "tailwindcss", "vaul", "Waitlist", "Waitlisted"],
+  "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"]
 }
