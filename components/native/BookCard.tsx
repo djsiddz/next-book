@@ -22,6 +22,8 @@ export function BookCard({
           src={coverUrl}
           alt={`Cover of ${title}`}
           style={{ backgroundSize: "cover", backgroundPosition: "center" }}
+          width={300}
+          height={400}
         />
       </div>
       <CardContent className="p-4">
