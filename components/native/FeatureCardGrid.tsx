@@ -1,21 +1,21 @@
-import { BookCheckIcon, BoxesIcon, SparklesIcon, Tally5Icon } from "lucide-react";
-
-import { featuresContent } from "ZL/content";
 import FeatureCard from "./FeatureCard";
 
+import { IconName } from "ZC/ui/icon";
+import { featuresContent } from "ZL/content";
+
 export default function FeatureCardGrid() {
-  // TODO: Find a better way to handle icons?
-  // When passing the icon to the FeatureCard, the ! is a non-null assertion has been added as a hack.
-  const iconSet = [
-    <BoxesIcon key={"boxIcon"} size={48} className="text-yellow-500" />,
-    <BookCheckIcon key={"bookCheckIcon"} size={48} className="text-yellow-500" />,
-    <Tally5Icon key={"tally5Icon"} size={48} className="text-yellow-500" />,
-    <SparklesIcon key={"sparklesIcon"} size={48} className="text-yellow-500" />,
-  ];
   return (
     <div className="mt-16 flex flex-col gap-4 md:grid md:grid-cols-2">
-      {featuresContent.features.map((feature, index) => (
-        <FeatureCard {...feature} key={feature.key} Icon={iconSet[index]!} />
+      {featuresContent.features.map((feature) => (
+        <FeatureCard
+          {...feature}
+          key={feature.key}
+          iconProps={{
+            name: feature.iconName as IconName,
+            size: 48,
+            className: "text-yellow-400",
+          }}
+        />
       ))}
     </div>
   );
