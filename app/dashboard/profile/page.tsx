@@ -1,4 +1,5 @@
 import { redirect } from "next/navigation";
+
 import { Avatar, AvatarFallback, AvatarImage } from "ZC/ui/avatar";
 import { createClient } from "ZU/supabase/server";
 

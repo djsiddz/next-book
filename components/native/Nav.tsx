@@ -1,6 +1,5 @@
 import React from "react";
 import { ChevronRightSquareIcon } from "lucide-react";
-
 import Link from "next/link";
 
 import { Button } from "ZC/ui/button";

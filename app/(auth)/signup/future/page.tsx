@@ -1,13 +1,12 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
 import { ChevronRightSquareIcon } from "lucide-react";
-
 import Link from "next/link";
 
+import { signup } from "../../login/actions";
 
 import { Button } from "ZC/ui/button";
 import { Input } from "ZC/ui/input";
 import { Label } from "ZC/ui/label";
-import { signup } from "../../login/actions";
 
 export default function SignUpPage() {
   return (

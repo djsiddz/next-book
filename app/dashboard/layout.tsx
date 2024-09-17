@@ -1,7 +1,6 @@
 import { redirect } from "next/navigation";
 
 import DashboardNav from "ZC/native/DashboardNav";
-
 import { createClient } from "ZU/supabase/server";
 
 export default async function DashboardLayout({ children }: { children: React.ReactNode }) {
