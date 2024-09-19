@@ -1,8 +1,7 @@
-/* eslint-disable @typescript-eslint/no-misused-promises */
 import { ChevronRightSquareIcon } from "lucide-react";
 import Link from "next/link";
 
-import { signup } from "../../login/actions";
+import { signUp } from "../../actions";
 
 import { Button } from "ZC/ui/button";
 import { Input } from "ZC/ui/input";
@@ -23,7 +22,12 @@ export default function SignUpPage() {
             <Label htmlFor="password">Password</Label>
             <Input type="password" id="password" placeholder="Password" name="password" required />
           </div>
-          <Button className="w-full py-3" formAction={signup}>
+          <Button
+            className="w-full py-3"
+            formAction={(formData) => {
+              signUp(formData).catch(console.error);
+            }}
+          >
             Sign Me Up!
           </Button>
         </form>

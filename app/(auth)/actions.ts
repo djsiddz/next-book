@@ -28,7 +28,7 @@ export async function login(formData: FormData) {
   redirect("/dashboard");
 }
 
-export async function signupOnWaitlist(formData: FormData) {
+export async function signUpOnWaitlist(formData: FormData) {
   const supabase = createClient();
 
   // Type-casting here for convenience
@@ -60,7 +60,7 @@ export async function signupOnWaitlist(formData: FormData) {
   redirect("/waitlist");
 }
 
-export async function signup(formData: FormData) {
+export async function signUp(formData: FormData) {
   const supabase = createClient();
 
   // Type-casting here for convenience
