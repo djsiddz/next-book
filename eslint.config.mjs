@@ -169,13 +169,10 @@ export default [
       },
       "import/extensions": [".js", ".jsx", ".ts", ".tsx"],
       "import/parsers": {
+        // TODO: Handle this once eslint-plugin-import properly supports v9 & flat config
         // Using espree as a fix as per: https://github.com/import-js/eslint-plugin-import/issues/2556#issuecomment-2272395246
         espree: [".js", ".cjs", ".mjs", ".jsx"],
         "@typescript-eslint/parser": [".ts", ".tsx"],
-      },
-      "import/order": {
-        groups: ["builtin", "external", "internal", "parent", "sibling", "index"],
-        "newlines-between": "always",
       },
       react: {
         version: "detect",

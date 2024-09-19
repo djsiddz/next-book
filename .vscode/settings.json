@@ -1,10 +1,20 @@
 {
-  "typescript.tsdk": "node_modules/typescript/lib",
-  "typescript.enablePromptUseWorkspaceTsdk": true,
-  "eslint.nodePath": "/home/sid/.volta/bin/node",
+  "cSpell.words": [
+    "clsx",
+    "compat",
+    "espree",
+    "lefthook",
+    "lucide",
+    "supabase",
+    "tailwindcss",
+    "vaul",
+    "Waitlist",
+    "Waitlisted"
+  ],
   "eslint.codeActionsOnSave.mode": "all",
+  "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
   "prettier.prettierPath": "node_modules/prettier/index.cjs",
   "tailwindCSS.experimental.classRegex": [["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"]],
-  "cSpell.words": ["clsx", "compat", "espree", "lucide", "supabase", "tailwindcss", "vaul", "Waitlist", "Waitlisted"],
-  "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"]
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "typescript.tsdk": "node_modules/typescript/lib"
 }
