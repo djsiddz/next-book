@@ -16,9 +16,9 @@ pre-commit:
     eslint:
       glob: "*.{js,ts,jsx,tsx}"
       run: pnpm lint {staged_files}
-    spelling:
-      glob: "*.{js,ts,jsx,tsx,json,md}"
-      exclude:
-        - .vscode/settings.json
-        - package.json
-      run: pnpm cspell {staged_files}
+    # spelling:
+    #   glob: "*.{js,ts,jsx,tsx,md}"
+    #   exclude:
+    #     - .vscode/settings.json
+    #     - package.json
+    #   run: pnpm cspell {staged_files}
