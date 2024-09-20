@@ -1,28 +1,18 @@
 {
-  "features": [
-    {
-      "key": "allBooks",
-      "title": "All Books in one view",
-      "body": "Bring all your books. We'll make sure you can remember how you got a book! And where it is currently.",
-      "iconName": "boxes"
-    },
-    {
-      "key": "trackProgress",
-      "title": "Track your progress",
-      "body": "(Coming Soon) Track your reading progress manually or from your Kindle.",
-      "iconName": "book-check"
-    },
-    {
-      "key": "buildHabit",
-      "title": "Build a reading habit",
-      "body": "(Coming Soon) Set goals and build a habit. We'll help you build a growth mindset.",
-      "iconName": "tally-5"
-    },
-    {
-      "key": "recommendationsFromAI",
-      "title": "Get AI recommendations",
-      "body": "(Coming Soon) Let AI recommend books based on your library and reading history. Or discover new books. You control how the AI assists you.",
-      "iconName": "sparkles"
-    }
-  ]
+  "allBooks": {
+    "title": "All Books in one view",
+    "body": "Bring all your books. We'll make sure you can remember how you got a book! And where it is currently."
+  },
+  "trackProgress": {
+    "title": "Track your progress",
+    "body": "(Coming Soon) Track your reading progress manually or from your Kindle."
+  },
+  "buildHabit": {
+    "title": "Build a reading habit",
+    "body": "(Coming Soon) Set goals and build a habit. We'll help you build a growth mindset."
+  },
+  "recommendationsFromAI": {
+    "title": "Get AI recommendations",
+    "body": "(Coming Soon) Let AI recommend books based on your library and reading history. Or discover new books. You control how the AI assists you."
+  }
 }
