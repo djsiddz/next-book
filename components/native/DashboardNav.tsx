@@ -2,8 +2,9 @@
 
 import React from "react";
 import { ChevronRightSquareIcon } from "lucide-react";
-
 import Link from "next/link";
+
+import { BookSearch } from "./BookSearch";
 
 import {
   NavigationMenu,
@@ -16,7 +17,6 @@ import {
 } from "ZC/ui/navigation-menu";
 import { profileLinks } from "ZL/constants";
 import { cn } from "ZL/utils";
-import { BookSearch } from "./BookSearch";
 
 export default function DashboardNav({ email }: { email: string | undefined }) {
   return (

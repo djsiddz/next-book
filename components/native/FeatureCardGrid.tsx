@@ -1,21 +1,41 @@
-import { BookCheckIcon, BoxesIcon, SparklesIcon, Tally5Icon } from "lucide-react";
-
-import { featuresContent } from "ZL/content";
 import FeatureCard from "./FeatureCard";
 
+import type { IconName } from "ZC/ui/icon";
+import { featuresContent } from "ZL/content";
+
+enum FeatureKeys {
+  ALL = "allBooks",
+  TRACK = "trackProgress",
+  BUILD = "buildHabit",
+  RECOMMEND = "recommendationsFromAI",
+}
+
+type FeatureContent = { title: string; body: string; iconName: IconName };
+
+const FEATURES: Record<FeatureKeys, FeatureContent> = {
+  [FeatureKeys.ALL]: { ...featuresContent.allBooks, iconName: "boxes" } as FeatureContent,
+  [FeatureKeys.TRACK]: { ...featuresContent.trackProgress, iconName: "book-check" } as FeatureContent,
+  [FeatureKeys.BUILD]: { ...featuresContent.buildHabit, iconName: "tally-5" } as FeatureContent,
+  [FeatureKeys.RECOMMEND]: { ...featuresContent.recommendationsFromAI, iconName: "sparkles" } as FeatureContent,
+} as const;
+
 export default function FeatureCardGrid() {
-  // TODO: Find a better way to handle icons?
-  const iconSet = [
-    <BoxesIcon key={"boxIcon"} size={48} className="text-yellow-500" />,
-    <BookCheckIcon key={"bookCheckIcon"} size={48} className="text-yellow-500" />,
-    <Tally5Icon key={"tally5Icon"} size={48} className="text-yellow-500" />,
-    <SparklesIcon key={"sparklesIcon"} size={48} className="text-yellow-500" />,
-  ];
   return (
     <div className="mt-16 flex flex-col gap-4 md:grid md:grid-cols-2">
-      {featuresContent.features.map((feature, index) => (
-        <FeatureCard {...feature} key={feature.key} Icon={iconSet[index]} />
-      ))}
+      {Object.keys(FEATURES).map((key) => {
+        const feature = FEATURES[key as FeatureKeys];
+        return (
+          <FeatureCard
+            {...feature}
+            key={key}
+            iconProps={{
+              name: feature.iconName,
+              size: 48,
+              className: "text-yellow-400",
+            }}
+          />
+        );
+      })}
     </div>
   );
 }

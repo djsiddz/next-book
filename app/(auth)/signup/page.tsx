@@ -1,16 +1,14 @@
-/* eslint-disable @typescript-eslint/no-misused-promises */
 "use client";
 
 import { Suspense } from "react";
 import { ChevronRightSquareIcon } from "lucide-react";
-
 import { useSearchParams } from "next/navigation";
 
+import { signUpOnWaitlist } from "../actions";
 
 import { Button } from "ZC/ui/button";
 import { Input } from "ZC/ui/input";
 import { Label } from "ZC/ui/label";
-import { signupOnWaitlist } from "../login/actions";
 
 function CampaignInput() {
   const searchParams = useSearchParams();
@@ -41,7 +39,12 @@ export default function WaitlistPage() {
               <CampaignInput />
             </Suspense>
           </div>
-          <Button className="w-full py-3" formAction={signupOnWaitlist}>
+          <Button
+            className="w-full py-3"
+            formAction={(formData) => {
+              signUpOnWaitlist(formData).catch(console.error);
+            }}
+          >
             Join the Waitlist!
           </Button>
         </form>

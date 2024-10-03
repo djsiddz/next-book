@@ -1,4 +1,5 @@
 import { redirect } from "next/navigation";
+
 import { BookCard } from "ZC/native/BookCard";
 import { createClient } from "ZU/supabase/server";
 
@@ -26,7 +27,7 @@ export default async function MyCollection() {
       <h1 className="text-xl uppercase">My Collection ({booksOwned?.length})</h1>
       <div className="flex gap-4">
         {booksOwned?.length &&
-          booksOwned?.map((owned) => <BookCard title={owned.book?.title} key={"owned" + owned.id} />)}
+          booksOwned?.map((owned) => <BookCard title={owned.book?.title ?? ""} key={"owned" + owned.id} />)}
       </div>
     </div>
   );

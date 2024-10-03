@@ -1,20 +1,21 @@
 {
-  "typescript.tsdk": ".yarn/sdks/typescript/lib",
-  "typescript.enablePromptUseWorkspaceTsdk": true,
-  "search.exclude": {
-    "**/.yarn": true,
-    "**/.pnp.*": true
-  },
-  "eslint.nodePath": ".yarn/sdks",
-  "prettier.prettierPath": ".yarn/sdks/prettier/index.cjs",
-  "tailwindCSS.experimental.classRegex": [
-    [
-      "cva\\(([^)]*)\\)",
-      "[\"'`]([^\"'`]*).*?[\"'`]"
-    ]
-  ],
   "cSpell.words": [
+    "clsx",
+    "compat",
+    "espree",
+    "lefthook",
+    "lucide",
+    "signup",
+    "supabase",
+    "tailwindcss",
+    "vaul",
     "Waitlist",
     "Waitlisted"
-  ]
+  ],
+  "eslint.codeActionsOnSave.mode": "all",
+  "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+  "prettier.prettierPath": "node_modules/prettier/index.cjs",
+  "tailwindCSS.experimental.classRegex": [["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"]],
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "typescript.tsdk": "node_modules/typescript/lib"
 }

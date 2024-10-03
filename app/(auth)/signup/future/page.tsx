@@ -1,13 +1,13 @@
-/* eslint-disable @typescript-eslint/no-misused-promises */
-import { ChevronRightSquareIcon } from "lucide-react";
+"use client";
 
+import { ChevronRightSquareIcon } from "lucide-react";
 import Link from "next/link";
 
+import { signUp } from "../../actions";
 
 import { Button } from "ZC/ui/button";
 import { Input } from "ZC/ui/input";
 import { Label } from "ZC/ui/label";
-import { signup } from "../../login/actions";
 
 export default function SignUpPage() {
   return (
@@ -24,7 +24,12 @@ export default function SignUpPage() {
             <Label htmlFor="password">Password</Label>
             <Input type="password" id="password" placeholder="Password" name="password" required />
           </div>
-          <Button className="w-full py-3" formAction={signup}>
+          <Button
+            className="w-full py-3"
+            formAction={(formData) => {
+              signUp(formData).catch(console.error);
+            }}
+          >
             Sign Me Up!
           </Button>
         </form>

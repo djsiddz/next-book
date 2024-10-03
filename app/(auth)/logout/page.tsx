@@ -2,23 +2,32 @@
 
 import { useEffect, useRef, useState } from "react";
 import { ChevronRightSquareIcon } from "lucide-react";
-
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { logout } from "../login/actions";
+
+import { logout } from "../actions";
 
 export default function LogoutPage() {
-  const [bookQuote, setBookQuote] = useState("");
+  const quotes: string[] = [
+    `"I knew I was not reading upto my potential!" - Po, Kung Fu Panda`,
+    `"The only thing that matters is what you choose to read now." - Po, Kung Fu Panda`,
+    `"To infinity... and books!" - Buzz Lightyear, Toy Story`,
+    `"I read somewhere that an empty room is an opportunity." - Joy, Inside Out`,
+    `"Just keep reading." - Dory, Finding Nemo`,
+    `"I'm packing your extra pair of books, and your angry eyes just in case." - Mrs. Potato Head, Toy Story`,
+    `"I never look back, darling. It distracts from the book." - Edna Mode, The Incredibles`,
+    `"I don't want to survive. I want to read." - Captain, WALL-E`,
+    `"Not everyone can become a great reader, but great readers can come from anywhere." - Anton Ego, Ratatouille`,
+  ] as const;
+
+  const [bookQuote, setBookQuote] = useState(quotes[0]);
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | undefined>();
   const router = useRouter();
 
-  const quotes = [
-    `"I knew I was not reading upto my potential!" - Po`,
-    `"The only thing that matters is what you choose to read now." - Po`,
-  ];
-
   useEffect(() => {
-    setBookQuote(quotes[Math.floor(Math.random() * quotes.length)]);
+    const index = Math.floor(Math.random() * (quotes.length - 1)) % quotes.length;
+    const quote: string = quotes[index] ?? quotes[0] ?? "";
+    setBookQuote(quote);
     logout().catch(console.error);
 
     timeoutRef.current = setTimeout(() => {
