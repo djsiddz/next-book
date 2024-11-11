@@ -10,7 +10,7 @@
 #       tags: backend security
 #       run: bundle audit
 #
-pre-commit:
+pre-push:
   parallel: true
   commands:
     eslint:
