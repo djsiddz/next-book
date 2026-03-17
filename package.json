@@ -3,7 +3,16 @@
   "version": "2026.3.4",
   "private": true,
   "type": "module",
-  "scripts": {},
+  "scripts": {
+    "dev": "pnpm --filter web dev",
+    "build": "pnpm --filter web build",
+    "start": "pnpm --filter web start",
+    "lint": "pnpm --filter \"*\" lint",
+    "db:create-migration-from-diff": "supabase db diff -f ",
+    "db:push": "pnpm dlx supabase db push"
+  },
   "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
 }
