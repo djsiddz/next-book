@@ -1,9 +1,11 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import Link from 'next/link'
 
 type Book = {
     id: string
+    userBookId: string
     title: string
     author: string
     cover: string
@@ -53,7 +55,7 @@ export default function LibraryPage() {
             <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
                     {books.map((book) => (
-                        <div key={book.id} className="group relative flex flex-col overflow-hidden rounded-lg bg-white shadow transition-all hover:shadow-lg">
+                        <Link key={book.id} href={`/library/${book.userBookId}`} className="group relative flex flex-col overflow-hidden rounded-lg bg-white shadow transition-all hover:shadow-lg">
                             <div className="aspect-[2/3] w-full bg-gray-200 overflow-hidden">
                                 <img
                                     src={book.cover}
@@ -65,8 +67,9 @@ export default function LibraryPage() {
                                 <h3 className="text-sm font-medium text-gray-900 line-clamp-1">{book.title}</h3>
                                 <p className="mt-1 text-xs text-gray-500">{book.author}</p>
                             </div>
-                        </div>
+                        </Link>
                     ))}
+
 
                     {/* Mystery Book Recommendation */}
                     {recommendation && (
