@@ -1,62 +1,46 @@
-import { login, signup } from './actions'
+import { login } from './actions'
 
 export default function LoginPage() {
     return (
         <div className="flex h-screen w-full items-center justify-center p-4">
             <form className="flex w-full max-w-sm flex-col gap-4 text-sm">
-                <h1 className="text-2xl font-bold mb-4">Welcome to Next Book</h1>
-
-                <div className="flex flex-col gap-2 relative">
-                    <label htmlFor="first_name">First Name (Signup only)</label>
-                    <input
-                        id="first_name"
-                        name="first_name"
-                        placeholder="John"
-                        className="rounded border p-2"
-                    />
+                <div className="mb-2">
+                    <h1 className="text-2xl font-bold">Welcome back</h1>
+                    <p className="mt-1 text-gray-500">
+                        Don&apos;t have an account?{' '}
+                        <a href="/signup" className="text-blue-600 hover:underline">Sign up</a>
+                    </p>
                 </div>
 
-                <div className="flex flex-col gap-2 relative">
-                    <label htmlFor="last_name">Last Name (Signup only)</label>
-                    <input
-                        id="last_name"
-                        name="last_name"
-                        placeholder="Doe"
-                        className="rounded border p-2"
-                    />
-                </div>
-
-                <div className="flex flex-col gap-2 mt-4 relative">
+                <div className="flex flex-col gap-2">
                     <label htmlFor="email">Email</label>
                     <input
                         id="email"
                         name="email"
                         type="email"
                         required
+                        placeholder="you@example.com"
                         className="rounded border p-2"
                     />
                 </div>
 
-                <div className="flex flex-col gap-2 relative">
+                <div className="flex flex-col gap-2">
                     <label htmlFor="password">Password</label>
                     <input
                         id="password"
                         name="password"
                         type="password"
                         required
+                        placeholder="••••••••"
                         className="rounded border p-2"
                     />
                 </div>
 
-                <div className="mt-6 flex flex-col gap-2">
-                    <button formAction={login} className="rounded bg-blue-600 p-2 text-white">
-                        Log in
-                    </button>
-                    <button formAction={signup} className="rounded border bg-white p-2 text-blue-600">
-                        Sign up
-                    </button>
-                </div>
+                <button formAction={login} className="mt-2 rounded bg-blue-600 p-2 text-white hover:bg-blue-700 transition-colors">
+                    Log in
+                </button>
             </form>
         </div>
     )
 }
+
