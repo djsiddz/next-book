@@ -64,10 +64,10 @@ export default function CapturePage() {
     }
 
     return (
-        <div className="min-h-screen bg-gray-50 pb-24">
-            <header className="bg-white shadow">
+        <div className="min-h-screen bg-background pb-20 font-sans">
+            <header className="bg-background border-b shadow-sm sticky top-0 z-10">
                 <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-                    <h1 className="text-3xl font-bold tracking-tight text-gray-900">Add a Book</h1>
+                    <h1 className="text-3xl tracking-tighter font-heading">Add a Book</h1>
                 </div>
             </header>
 
@@ -78,12 +78,12 @@ export default function CapturePage() {
                         value={query}
                         onChange={(e) => setQuery(e.target.value)}
                         placeholder="Search by title, author, or ISBN"
-                        className="flex-1 rounded-md border border-gray-300 p-3 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                        className="flex-1 rounded-none border border-border bg-background p-3 shadow-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
                     />
                     <button
                         type="submit"
                         disabled={loading}
-                        className="rounded-md bg-blue-600 px-6 py-3 font-medium text-white shadow-sm hover:bg-blue-700 disabled:opacity-50"
+                        className="rounded-none bg-primary px-6 py-3 font-bold text-primary-foreground shadow-sm hover:opacity-90 disabled:opacity-50 cursor-pointer"
                     >
                         {loading ? 'Searching...' : 'Search'}
                     </button>
@@ -91,8 +91,8 @@ export default function CapturePage() {
 
                 <div className="flex flex-col gap-4">
                     {results.map((book) => (
-                        <div key={book.id} className="flex gap-4 rounded-lg bg-white p-4 shadow">
-                            <div className="h-32 w-24 shrink-0 overflow-hidden rounded bg-gray-200">
+                        <div key={book.id} className="flex gap-4 rounded-none border bg-card p-4 shadow-sm">
+                            <div className="h-32 w-24 shrink-0 overflow-hidden bg-muted">
                                 {book.volumeInfo.imageLinks?.thumbnail && (
                                     <img
                                         src={book.volumeInfo.imageLinks.thumbnail.replace('http:', 'https:')}
@@ -103,11 +103,11 @@ export default function CapturePage() {
                             </div>
                             <div className="flex flex-1 flex-col justify-between">
                                 <div>
-                                    <h3 className="font-medium text-gray-900 line-clamp-2">{book.volumeInfo.title}</h3>
-                                    <p className="mt-1 text-sm text-gray-500 line-clamp-1">
+                                    <h3 className="font-bold text-foreground line-clamp-2 font-heading">{book.volumeInfo.title}</h3>
+                                    <p className="mt-1 text-sm text-muted-foreground line-clamp-1">
                                         {book.volumeInfo.authors?.join(', ') || 'Unknown Author'}
                                     </p>
-                                    <p className="mt-2 text-xs text-gray-400 line-clamp-2">
+                                    <p className="mt-2 text-xs text-muted-foreground/80 line-clamp-2">
                                         {book.volumeInfo.description || 'No description available.'}
                                     </p>
                                 </div>
@@ -115,7 +115,7 @@ export default function CapturePage() {
                                     <button
                                         onClick={() => addBook(book)}
                                         disabled={addingId === book.id}
-                                        className="rounded-md bg-green-50 px-4 py-2 text-sm font-medium text-green-700 hover:bg-green-100 disabled:opacity-50"
+                                        className="rounded-none bg-primary/10 px-4 py-2 text-sm font-bold text-primary hover:bg-primary/20 disabled:opacity-50 cursor-pointer"
                                     >
                                         {addingId === book.id ? 'Adding...' : 'Add to Library'}
                                     </button>
@@ -128,21 +128,6 @@ export default function CapturePage() {
                     )}
                 </div>
             </main>
-
-            <nav className="fixed bottom-0 w-full bg-white border-t border-gray-200 flex justify-around p-3 pb-safe z-50 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]">
-                <a href="/library" className="flex flex-col items-center text-gray-400 hover:text-gray-600 transition-colors">
-                    <BookIcon className="w-6 h-6" />
-                    <span className="text-xs mt-1">Library</span>
-                </a>
-                <a href="/capture" className="flex flex-col items-center text-blue-600">
-                    <Search className="w-6 h-6" />
-                    <span className="text-xs mt-1 font-medium">Search</span>
-                </a>
-                <a href="/profile" className="flex flex-col items-center text-gray-400 hover:text-gray-600 transition-colors">
-                    <User className="w-6 h-6" />
-                    <span className="text-xs mt-1">Profile</span>
-                </a>
-            </nav>
         </div>
     )
 }

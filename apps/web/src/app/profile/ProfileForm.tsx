@@ -48,7 +48,7 @@ export default function ProfileForm({
                     onClick={() => fileInputRef.current?.click()}
                     className="relative group cursor-pointer focus:outline-none"
                 >
-                    <div className="flex h-24 w-24 items-center justify-center rounded-full overflow-hidden bg-blue-100 text-blue-700 text-3xl font-bold ring-2 ring-offset-2 ring-transparent group-hover:ring-blue-400 transition-all">
+                    <div className="flex h-24 w-24 items-center justify-center bg-muted text-foreground text-3xl font-bold ring-2 ring-offset-2 ring-transparent group-hover:ring-primary transition-all">
                         {preview ? (
                             <Image
                                 src={preview}
@@ -63,14 +63,14 @@ export default function ProfileForm({
                         )}
                     </div>
                     {/* Overlay */}
-                    <div className="absolute inset-0 rounded-full bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                    <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                             <path strokeLinecap="round" strokeLinejoin="round" d="M3 9a2 2 0 012-2h.172a2 2 0 001.414-.586l.828-.828A2 2 0 019.828 5h4.344a2 2 0 011.414.586l.828.828A2 2 0 0017.828 7H18a2 2 0 012 2v9a2 2 0 01-2 2H4a2 2 0 01-2-2V9z" />
                             <path strokeLinecap="round" strokeLinejoin="round" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
                         </svg>
                     </div>
                 </button>
-                <p className="text-xs text-gray-400">Tap photo to change</p>
+                <p className="text-xs text-muted-foreground">Tap photo to change</p>
                 <input
                     ref={fileInputRef}
                     type="file"
@@ -82,29 +82,29 @@ export default function ProfileForm({
             </div>
 
             {/* Email (read-only) */}
-            <p className="text-center text-sm text-gray-500 -mt-3 mb-6">{email}</p>
+            <p className="text-center text-sm text-muted-foreground -mt-3 mb-6">{email}</p>
 
             {/* Name fields */}
             <div className="flex gap-3 mb-4">
                 <div className="flex flex-1 flex-col gap-1.5">
-                    <label htmlFor="first_name" className="text-xs font-medium text-gray-600 uppercase tracking-wide">First Name</label>
+                    <label htmlFor="first_name" className="text-xs font-medium text-muted-foreground uppercase tracking-wide">First Name</label>
                     <input
                         id="first_name"
                         name="first_name"
                         defaultValue={firstName}
                         required
                         placeholder="First"
-                        className="rounded-lg border border-gray-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+                        className="border border-border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary"
                     />
                 </div>
                 <div className="flex flex-1 flex-col gap-1.5">
-                    <label htmlFor="last_name" className="text-xs font-medium text-gray-600 uppercase tracking-wide">Last Name</label>
+                    <label htmlFor="last_name" className="text-xs font-medium text-muted-foreground uppercase tracking-wide">Last Name</label>
                     <input
                         id="last_name"
                         name="last_name"
                         defaultValue={lastName}
                         placeholder="Last"
-                        className="rounded-lg border border-gray-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+                        className="border border-border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary"
                     />
                 </div>
             </div>
@@ -113,7 +113,7 @@ export default function ProfileForm({
             <button
                 type="submit"
                 disabled={isPending}
-                className="w-full rounded-lg bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-blue-700 disabled:opacity-60"
+                className="w-full bg-primary px-4 py-2.5 text-sm font-black text-primary-foreground shadow-sm transition-opacity hover:opacity-90 disabled:opacity-60 cursor-pointer"
             >
                 {isPending ? 'Saving…' : 'Save changes'}
             </button>

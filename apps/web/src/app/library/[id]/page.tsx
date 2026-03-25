@@ -143,56 +143,58 @@ export default function BookDetailPage() {
 
     if (loading) {
         return (
-            <div className="min-h-screen flex items-center justify-center bg-gray-50">
-                <div className="text-gray-500 animate-pulse">Loading…</div>
+            <div className="min-h-screen flex items-center justify-center bg-background">
+                <div className="text-muted-foreground animate-pulse">Loading…</div>
             </div>
         )
     }
 
     if (error && !detail) {
         return (
-            <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 gap-4">
-                <p className="text-red-500">{error}</p>
-                <Link href="/library" className="text-blue-600 underline text-sm">← Back to Library</Link>
+            <div className="min-h-screen flex flex-col items-center justify-center bg-background gap-4">
+                <p className="text-destructive">{error}</p>
+                <Link href="/library" className="text-primary underline text-sm">← Back to Library</Link>
             </div>
         )
     }
 
-    const { book, edition } = detail!
+    if (!detail) return null
+
+    const { book, edition } = detail
 
     return (
-        <div className="min-h-screen bg-gray-50 pb-24">
+        <div className="min-h-screen bg-background pb-24">
             {/* Header */}
-            <header className="bg-white shadow sticky top-0 z-10">
+            <header className="bg-background border-b shadow-sm sticky top-0 z-10">
                 <div className="mx-auto max-w-2xl px-4 py-4 flex items-center gap-3">
                     <button
                         onClick={() => router.push('/library')}
-                        className="p-2 rounded-full hover:bg-gray-100 transition-colors text-gray-600"
+                        className="p-2 rounded-full hover:bg-accent transition-colors text-foreground"
                         aria-label="Back to Library"
                     >
                         ←
                     </button>
-                    <h1 className="text-lg font-semibold text-gray-900 line-clamp-1 flex-1">{book.title}</h1>
+                    <h1 className="text-lg font-semibold text-foreground line-clamp-1 flex-1 font-heading">{book.title}</h1>
                 </div>
             </header>
 
             <main className="mx-auto max-w-2xl px-4 py-6 space-y-8">
 
                 {/* Book Info card */}
-                <div className="bg-white rounded-xl shadow-sm overflow-hidden flex gap-5 p-5">
+                <div className="bg-card border rounded-none shadow-sm overflow-hidden flex gap-5 p-5">
                     {edition.cover_image ? (
                         <img
                             src={edition.cover_image}
                             alt={book.title}
-                            className="w-24 flex-shrink-0 rounded-lg object-cover shadow-md self-start"
+                            className="w-24 shrink-0 rounded-none object-cover shadow-md self-start"
                         />
                     ) : (
-                        <div className="w-24 h-36 flex-shrink-0 rounded-lg bg-gray-200 flex items-center justify-center text-gray-400 text-4xl font-serif">
+                        <div className="w-24 h-36 shrink-0 bg-muted flex items-center justify-center text-muted-foreground text-4xl font-heading">
                             📖
                         </div>
                     )}
                     <div className="flex-1 min-w-0">
-                        <h2 className="text-xl font-bold text-gray-900 leading-snug">{book.title}</h2>
+                        <h2 className="text-xl font-bold text-foreground leading-snug font-heading">{book.title}</h2>
                         {book.subtitle && (
                             <p className="text-sm text-gray-500 mt-0.5">{book.subtitle}</p>
                         )}
@@ -232,11 +234,10 @@ export default function BookDetailPage() {
                                     key={opt.value}
                                     type="button"
                                     onClick={() => set('reading_status', opt.value)}
-                                    className={`px-3 py-1.5 rounded-full text-sm font-medium border transition-all ${
-                                        form.reading_status === opt.value
-                                            ? 'bg-blue-600 text-white border-blue-600 shadow-sm'
-                                            : 'bg-white text-gray-600 border-gray-300 hover:border-blue-400'
-                                    }`}
+                                    className={`px-3 py-1.5 rounded-none text-sm font-medium border transition-all ${form.reading_status === opt.value
+                                            ? 'bg-primary text-primary-foreground border-primary shadow-sm'
+                                            : 'bg-background text-muted-foreground border-border hover:border-primary'
+                                        }`}
                                 >
                                     {opt.label}
                                 </button>
@@ -372,7 +373,7 @@ export default function BookDetailPage() {
                             type="button"
                             onClick={handleSave}
                             disabled={saving}
-                            className="flex-1 bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400 text-white font-semibold py-2.5 rounded-xl transition-colors text-sm"
+                            className="flex-1 bg-primary hover:opacity-90 disabled:opacity-50 text-primary-foreground font-bold py-2.5 rounded-none transition-opacity text-sm shadow-sm"
                         >
                             {saving ? 'Saving…' : 'Save Changes'}
                         </button>
@@ -385,22 +386,6 @@ export default function BookDetailPage() {
                     </div>
                 </div>
             </main>
-
-            {/* Bottom Nav */}
-            <nav className="fixed bottom-0 w-full bg-white border-t border-gray-200 flex justify-around p-3 pb-safe z-50">
-                <a href="/library" className="flex flex-col items-center text-blue-600">
-                    <span className="text-xl">📚</span>
-                    <span className="text-xs mt-1 font-medium">Library</span>
-                </a>
-                <a href="/capture" className="flex flex-col items-center text-gray-500 hover:text-gray-900 transition-colors">
-                    <span className="text-xl">🔍</span>
-                    <span className="text-xs mt-1">Search</span>
-                </a>
-                <a href="/profile" className="flex flex-col items-center text-gray-500 hover:text-gray-900 transition-colors">
-                    <span className="text-xl">👤</span>
-                    <span className="text-xs mt-1">Profile</span>
-                </a>
-            </nav>
         </div>
     )
 }

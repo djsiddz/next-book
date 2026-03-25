@@ -42,21 +42,21 @@ export default function LibraryPage() {
         fetchData()
     }, [])
 
-    if (loading) return <div className="p-8 text-center text-gray-500">Loading library...</div>
+    if (loading) return <div className="p-8 text-center text-muted-foreground animate-pulse">Loading library...</div>
 
     return (
-        <div className="min-h-screen bg-gray-50 pb-24">
-            <header className="bg-white shadow">
+        <div className="min-h-screen bg-background pb-24 font-sans">
+            <header className="bg-background border-b shadow-sm sticky top-0 z-50">
                 <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 flex justify-between items-center">
-                    <h1 className="text-3xl font-bold tracking-tight text-gray-900">My Library</h1>
+                    <h1 className="text-3xl font-black tracking-tighter font-heading">My Library</h1>
                 </div>
             </header>
 
             <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
                     {books.map((book) => (
-                        <Link key={book.id} href={`/library/${book.userBookId}`} className="group relative flex flex-col overflow-hidden rounded-lg bg-white shadow transition-all hover:shadow-lg">
-                            <div className="aspect-[2/3] w-full bg-gray-200 overflow-hidden">
+                        <Link key={book.id} href={`/library/${book.userBookId}`} className="group relative flex flex-col overflow-hidden rounded-none bg-card border shadow-sm transition-all hover:shadow-md">
+                            <div className="aspect-2/3 w-full bg-muted overflow-hidden">
                                 <img
                                     src={book.cover}
                                     alt={book.title}
@@ -64,8 +64,8 @@ export default function LibraryPage() {
                                 />
                             </div>
                             <div className="p-4 flex flex-col flex-1">
-                                <h3 className="text-sm font-medium text-gray-900 line-clamp-1">{book.title}</h3>
-                                <p className="mt-1 text-xs text-gray-500">{book.author}</p>
+                                <h3 className="text-sm font-bold text-foreground line-clamp-1">{book.title}</h3>
+                                <p className="mt-1 text-xs text-muted-foreground">{book.author}</p>
                             </div>
                         </Link>
                     ))}
@@ -74,22 +74,22 @@ export default function LibraryPage() {
                     {/* Mystery Book Recommendation */}
                     {recommendation && (
                         <div
-                            className="group relative flex flex-col overflow-hidden rounded-lg border-2 border-dashed border-gray-300 bg-gray-50 transition-all cursor-pointer"
+                            className="group relative flex flex-col overflow-hidden rounded-none border-2 border-dashed border-primary bg-muted/50 transition-all cursor-pointer"
                             onClick={() => setShowRecommendation(!showRecommendation)}
                         >
                             {!showRecommendation ? (
                                 <>
-                                    <div className="aspect-[2/3] w-full flex items-center justify-center bg-gray-100 group-hover:bg-blue-50 transition-colors">
-                                        <span className="text-6xl text-gray-400 font-bold group-hover:text-blue-500 font-serif">?</span>
+                                    <div className="aspect-2/3 w-full flex items-center justify-center bg-muted group-hover:bg-primary/5 transition-colors">
+                                        <span className="text-6xl text-muted-foreground font-black group-hover:text-primary font-heading">?</span>
                                     </div>
-                                    <div className="p-4 flex flex-col flex-1 items-center justify-center border-t border-gray-200 bg-white group-hover:bg-blue-50 transition-colors">
-                                        <h3 className="text-sm font-medium text-gray-900">Next Read</h3>
-                                        <p className="mt-1 text-xs text-center text-gray-500 line-clamp-2">Click to reveal recommendation</p>
+                                    <div className="p-4 flex flex-col flex-1 items-center justify-center border-t border-border bg-card group-hover:bg-primary/5 transition-colors">
+                                        <h3 className="text-sm font-bold text-foreground">Next Read</h3>
+                                        <p className="mt-1 text-xs text-center text-muted-foreground line-clamp-2">Click to reveal recommendation</p>
                                     </div>
                                 </>
                             ) : (
                                 <>
-                                    <div className="aspect-[2/3] w-full bg-blue-100 overflow-hidden">
+                                    <div className="aspect-2/3 w-full bg-primary/10 overflow-hidden">
                                         {recommendation.cover ? (
                                             <img
                                                 src={recommendation.cover}
@@ -97,15 +97,15 @@ export default function LibraryPage() {
                                                 className="h-full w-full object-cover object-center"
                                             />
                                         ) : (
-                                            <div className="h-full w-full flex items-center justify-center bg-blue-200 text-blue-800 font-bold text-center p-2">
+                                            <div className="h-full w-full flex items-center justify-center bg-primary/20 text-primary font-bold text-center p-2 font-heading">
                                                 {recommendation.title}
                                             </div>
                                         )}
                                     </div>
-                                    <div className="p-4 flex flex-col flex-1 bg-blue-50 border-t border-blue-200">
-                                        <h3 className="text-sm font-bold text-blue-900 line-clamp-1">{recommendation.title}</h3>
-                                        <p className="mt-1 text-xs text-blue-700">{recommendation.author}</p>
-                                        <span className="mt-2 text-[10px] uppercase font-bold tracking-wider text-blue-500">Recommended</span>
+                                    <div className="p-4 flex flex-col flex-1 bg-primary/5 border-t border-primary/20">
+                                        <h3 className="text-sm font-bold text-foreground line-clamp-1">{recommendation.title}</h3>
+                                        <p className="mt-1 text-xs text-muted-foreground">{recommendation.author}</p>
+                                        <span className="mt-2 text-[10px] uppercase font-black tracking-widest text-primary">Recommended</span>
                                     </div>
                                 </>
                             )}
@@ -113,12 +113,12 @@ export default function LibraryPage() {
                     )}
 
                     {!recommendation && books.length > 0 && (
-                        <div className="group relative flex flex-col overflow-hidden rounded-lg border-2 border-dashed border-gray-300 bg-gray-50 opacity-50">
-                            <div className="aspect-[2/3] w-full flex items-center justify-center">
-                                <span className="text-4xl text-gray-300 font-bold font-serif">?</span>
+                        <div className="group relative flex flex-col overflow-hidden rounded-none border-2 border-dashed border-border bg-muted opacity-50">
+                            <div className="aspect-2/3 w-full flex items-center justify-center">
+                                <span className="text-4xl text-muted-foreground font-black font-heading">?</span>
                             </div>
-                            <div className="p-4 flex flex-col flex-1 items-center justify-center border-t border-gray-200 bg-white">
-                                <p className="mt-1 text-xs text-center text-gray-400">Add more books</p>
+                            <div className="p-4 flex flex-col flex-1 items-center justify-center border-t border-border bg-card">
+                                <p className="mt-1 text-xs text-center text-muted-foreground">Add more books</p>
                             </div>
                         </div>
                     )}
@@ -126,21 +126,6 @@ export default function LibraryPage() {
                 </div>
             </main>
 
-            {/* Basic Bottom Nav Template */}
-            <nav className="fixed bottom-0 w-full bg-white border-t border-gray-200 flex justify-around p-3 pb-safe z-50">
-                <a href="/library" className="flex flex-col items-center text-blue-600">
-                    <span className="text-xl">📚</span>
-                    <span className="text-xs mt-1 font-medium">Library</span>
-                </a>
-                <a href="/capture" className="flex flex-col items-center text-gray-500 hover:text-gray-900 transition-colors">
-                    <span className="text-xl">🔍</span>
-                    <span className="text-xs mt-1">Search</span>
-                </a>
-                <a href="/profile" className="flex flex-col items-center text-gray-500 hover:text-gray-900 transition-colors">
-                    <span className="text-xl">👤</span>
-                    <span className="text-xs mt-1">Profile</span>
-                </a>
-            </nav>
         </div>
     )
 }
