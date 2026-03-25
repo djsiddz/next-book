@@ -2,6 +2,19 @@
 
 What's the next book I should read?
 
+## Project Structure
+
+This is a monorepo setup using pnpm. Check the package.json for exact version number.
+
+### Shared Packages
+
+- Services (core business logic)
+- Types (shared models)
+
+### Apps
+
+- Web (Next.js) [View Readme](apps/web/README.md)
+
 ## Tech Stack
 
 - Next.js 16 - App Structure ✅
