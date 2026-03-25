@@ -3,3 +3,7 @@ packages:
   - 'packages/*'
 allowBuilds:
   supabase: true
+
+catalog:
+  typescript: ^5.9.3
+  "@supabase/supabase-js": ^2.100.0
