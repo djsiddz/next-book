@@ -9,12 +9,13 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@base-ui/react": "^1.3.0",
+    "@next-book/services": "workspace:*",
+    "@next-book/types": "workspace:*",
     "@phosphor-icons/react": "^2.1.10",
     "@radix-ui/react-slot": "^1.2.4",
     "@supabase/ssr": "^0.9.0",
     "@supabase/supabase-js": "catalog:",
-    "@next-book/services": "workspace:*",
-    "@next-book/types": "workspace:*",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "framer-motion": "^12.38.0",

@@ -1,4 +1,4 @@
-import { Instrument_Serif, Merriweather, Nunito_Sans } from "next/font/google";
+import { Merriweather, Nunito_Sans, Geist_Mono } from "next/font/google";
 
 export const merriweather = Merriweather({
   weight: ["300", "400", "700", "900"],
@@ -7,13 +7,13 @@ export const merriweather = Merriweather({
 });
 
 export const nunitoSans = Nunito_Sans({
-  weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
   subsets: ["latin"],
   variable: "--font-nunito-sans",
 });
 
-export const instrumentSerif = Instrument_Serif({
-  weight: ["400"],
+export const geistMono = Geist_Mono({
+  weight: ["400", "700"],
   subsets: ["latin"],
-  variable: "--font-instrument-serif",
+  variable: "--font-geist-mono",
 });
