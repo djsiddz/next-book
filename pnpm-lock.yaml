@@ -23,6 +23,12 @@ importers:
 
   apps/web:
     dependencies:
+      '@next-book/services':
+        specifier: workspace:*
+        version: link:../../packages/services
+      '@next-book/types':
+        specifier: workspace:*
+        version: link:../../packages/types
       '@phosphor-icons/react':
         specifier: ^2.1.10
         version: 2.1.10(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
