@@ -6,7 +6,7 @@ import { createClient } from "ZU/supabase/server";
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
   const token_hash = searchParams.get("token_hash");
-  const type = searchParams.get("type") as EmailOtpType | null;
+  const type = searchParams.get("type");
   const next = searchParams.get("next") ?? "/dashboard";
 
   const redirectTo = request.nextUrl.clone();
@@ -14,8 +14,8 @@ export async function GET(request: NextRequest) {
   redirectTo.searchParams.delete("token_hash");
   redirectTo.searchParams.delete("type");
 
-  if (token_hash && type) {
-    const supabase = createClient();
+  if (token_hash && isEmailOtpType(type)) {
+    const supabase = await createClient();
 
     const { error } = await supabase.auth.verifyOtp({
       type,
@@ -30,4 +30,16 @@ export async function GET(request: NextRequest) {
   // Return the user to an error page with some instructions
   redirectTo.pathname = "/error";
   return NextResponse.redirect(redirectTo);
+}
+
+function isEmailOtpType(type: string | null): type is EmailOtpType {
+  return (
+    type === "signup" ||
+    type === "invite" ||
+    type === "magiclink" ||
+    type === "recovery" ||
+    type === "email_change" ||
+    type === "email" ||
+    type === "phone_change"
+  );
 }

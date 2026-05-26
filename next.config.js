@@ -11,9 +11,6 @@ const nextConfig = {
       },
     ],
   },
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
   transpilePackages: ["lucide-react"], // to enable dynamic icons
 };
 

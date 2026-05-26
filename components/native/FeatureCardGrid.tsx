@@ -13,10 +13,10 @@ enum FeatureKeys {
 type FeatureContent = { title: string; body: string; iconName: IconName };
 
 const FEATURES: Record<FeatureKeys, FeatureContent> = {
-  [FeatureKeys.ALL]: { ...featuresContent.allBooks, iconName: "boxes" } as FeatureContent,
-  [FeatureKeys.TRACK]: { ...featuresContent.trackProgress, iconName: "book-check" } as FeatureContent,
-  [FeatureKeys.BUILD]: { ...featuresContent.buildHabit, iconName: "tally-5" } as FeatureContent,
-  [FeatureKeys.RECOMMEND]: { ...featuresContent.recommendationsFromAI, iconName: "sparkles" } as FeatureContent,
+  [FeatureKeys.ALL]: { ...featuresContent.allBooks, iconName: "boxes" },
+  [FeatureKeys.TRACK]: { ...featuresContent.trackProgress, iconName: "book-check" },
+  [FeatureKeys.BUILD]: { ...featuresContent.buildHabit, iconName: "tally-5" },
+  [FeatureKeys.RECOMMEND]: { ...featuresContent.recommendationsFromAI, iconName: "sparkles" },
 } as const;
 
 export default function FeatureCardGrid() {

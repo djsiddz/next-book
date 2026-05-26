@@ -51,7 +51,7 @@ module.exports = {
         },
       },
       fontFamily: {
-        sans: ["var(--font-sans)", ...defaultTheme.fontFamily.sans],
+        sans: [...defaultTheme.fontFamily.sans],
       },
       borderRadius: {
         lg: "var(--radius)",
