@@ -4,7 +4,7 @@ import { BookCard } from "ZC/native/BookCard";
 import { createClient } from "ZU/supabase/server";
 
 export default async function MyCollection() {
-  const supabase = createClient();
+  const supabase = await createClient();
 
   const { data: userData, error: userError } = await supabase.auth.getUser();
   if (userError || !userData?.user) {

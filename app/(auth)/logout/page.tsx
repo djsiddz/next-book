@@ -20,23 +20,25 @@ export default function LogoutPage() {
     `"Not everyone can become a great reader, but great readers can come from anywhere." - Anton Ego, Ratatouille`,
   ] as const;
 
-  const [bookQuote, setBookQuote] = useState(quotes[0]);
-  const timeoutRef = useRef<ReturnType<typeof setTimeout> | undefined>();
+  const [bookQuote] = useState(() => {
+    const index = Math.floor(Math.random() * quotes.length);
+    return quotes[index] ?? quotes[0] ?? "";
+  });
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const router = useRouter();
 
   useEffect(() => {
-    const index = Math.floor(Math.random() * (quotes.length - 1)) % quotes.length;
-    const quote: string = quotes[index] ?? quotes[0] ?? "";
-    setBookQuote(quote);
     logout().catch(console.error);
 
     timeoutRef.current = setTimeout(() => {
       router.push("/");
-      timeoutRef.current = undefined; // Clear the timeout reference
+      timeoutRef.current = null; // Clear the timeout reference
     }, 10 * 1000);
 
     return () => {
-      clearTimeout(timeoutRef.current);
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
     };
     // Need this function to run only once when the page is loaded and
     // not when any variables change.

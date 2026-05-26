@@ -3,7 +3,6 @@ import "./globals.css";
 import React from "react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
-import { fontSans } from "ZL/fonts";
 import { cn } from "ZL/utils";
 
 export const metadata = {
@@ -15,7 +14,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head></head>
-      <body className={cn("min-h-screen bg-background font-sans antialiased", fontSans.variable)}>
+      <body className={cn("min-h-screen bg-background font-sans antialiased")}>
         {children}
         <SpeedInsights />
       </body>

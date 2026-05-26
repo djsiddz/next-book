@@ -6,7 +6,7 @@ import { redirect } from "next/navigation";
 import { createClient } from "ZU/supabase/server";
 
 export async function login(formData: FormData) {
-  const supabase = createClient();
+  const supabase = await createClient();
 
   // Type-casting here for convenience
   // in practice, you should validate your inputs
@@ -29,7 +29,7 @@ export async function login(formData: FormData) {
 }
 
 export async function signUpOnWaitlist(formData: FormData) {
-  const supabase = createClient();
+  const supabase = await createClient();
 
   // Type-casting here for convenience
   // in practice, you should validate your inputs
@@ -61,7 +61,7 @@ export async function signUpOnWaitlist(formData: FormData) {
 }
 
 export async function signUp(formData: FormData) {
-  const supabase = createClient();
+  const supabase = await createClient();
 
   // Type-casting here for convenience
   // in practice, you should validate your inputs
@@ -84,7 +84,7 @@ export async function signUp(formData: FormData) {
 }
 
 export async function logout() {
-  const supabase = createClient();
+  const supabase = await createClient();
 
   const { error } = await supabase.auth.signOut();
   console.error(error);

@@ -4,16 +4,25 @@ What's the next book I should read?
 
 Your personal book collection management app, built using NextJS with Typescript.
 
+## Wiki
+
+This repository uses the root `README.md` as the wiki homepage. Add durable project knowledge to the linked pages below as the codebase evolves.
+
+- [Getting Started](docs/getting-started.md)
+- [Architecture Notes](docs/architecture.md)
+- [Testing Guide](docs/testing.md)
+- [Dependency Upgrades](docs/dependency-upgrades.md)
+
 ## Learning Objectives
 
 TBD
 
 ### Tech Stack
 
-- NextJS 14 - App Structure ✅
-- ReactJS 18 ✅
-- TailwindCSS ✅
-- TypeScript ✅
+- NextJS 16 ✅
+- ReactJS 19 ✅
+- TailwindCSS v3 ✅
+- TypeScript v6 ✅
 - Components from ShadCN UI ✅
 - StorybookJS
 

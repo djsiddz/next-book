@@ -1,5 +1,6 @@
 import { fixupConfigRules, fixupPluginRules } from "@eslint/compat";
 import { FlatCompat } from "@eslint/eslintrc";
+import { fileURLToPath } from "node:url";
 import importConfig from "eslint-plugin-import";
 import importAlias from "eslint-plugin-import-alias";
 import prettier from "eslint-plugin-prettier/recommended";
@@ -12,6 +13,8 @@ import jestDom from "eslint-plugin-jest-dom";
 import globals from "globals";
 
 const flatCompat = new FlatCompat();
+const tsconfigRootDir = fileURLToPath(new URL(".", import.meta.url));
+const toCompatConfig = ({ name: _name, ...config }) => config;
 
 const addNameToEachConfig = (name, configs) =>
   configs.map((conf) => ({
@@ -19,17 +22,20 @@ const addNameToEachConfig = (name, configs) =>
     name: [conf.name, name].filter(Boolean).join("-"),
   }));
 
-const reactFix = addNameToEachConfig("react", fixupConfigRules(flatCompat.config(react.configs.recommended)));
+const reactFix = addNameToEachConfig(
+  "react",
+  fixupConfigRules(flatCompat.config(toCompatConfig(react.configs.recommended))),
+);
 const reactHooksFix = addNameToEachConfig(
   "react-hook",
-  fixupConfigRules(flatCompat.config(reactHooks.configs.recommended)),
+  fixupConfigRules(flatCompat.config(toCompatConfig(reactHooks.configs.recommended))),
 );
 
-const importFix = addNameToEachConfig("imports", fixupConfigRules(flatCompat.config(importConfig.configs.recommended)));
-const nextCoreWebVitalsFix = addNameToEachConfig(
-  "next-core-web-vitals",
-  fixupConfigRules(flatCompat.config(next.configs[("core-web-vitals", "recommended")])),
+const importFix = addNameToEachConfig(
+  "imports",
+  fixupConfigRules(flatCompat.config(toCompatConfig(importConfig.configs.recommended))),
 );
+const nextCoreWebVitalsFix = addNameToEachConfig("next-core-web-vitals", [next.configs["core-web-vitals"]]);
 
 const tsConfig = addNameToEachConfig(
   "typescript-custom",
@@ -41,6 +47,7 @@ const tsConfig = addNameToEachConfig(
         project: "./tsconfig.json",
         ecmaVersion: "latest",
         sourceType: "module",
+        tsconfigRootDir,
       },
     },
     rules: {
@@ -53,10 +60,13 @@ const tsConfig = addNameToEachConfig(
 
 const testingLibraryConfig = addNameToEachConfig(
   "testing-library",
-  fixupConfigRules(flatCompat.config(testingLibrary.configs.react)),
+  fixupConfigRules(flatCompat.config(toCompatConfig(testingLibrary.configs.react))),
 );
 
-const jestDomConfig = addNameToEachConfig("jest-dom", fixupConfigRules(flatCompat.config(jestDom.configs.recommended)));
+const jestDomConfig = addNameToEachConfig(
+  "jest-dom",
+  fixupConfigRules(flatCompat.config(toCompatConfig(jestDom.configs.recommended))),
+);
 
 export default [
   {
@@ -91,7 +101,7 @@ export default [
       parserOptions: {
         ecmaFeatures: { jsx: true },
         project: "./tsconfig.json",
-        tsconfigRootDir: "./",
+        tsconfigRootDir,
       },
       ecmaVersion: "latest",
       sourceType: "module",

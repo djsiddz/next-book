@@ -12,9 +12,12 @@ export interface IconProps extends LucideProps {
 }
 
 const fallback = <div style={{ background: "#ddd", width: 24, height: 24 }} />;
+const dynamicIcons = Object.fromEntries(
+  Object.entries(dynamicIconImports).map(([name, loader]) => [name, dynamic(loader)]),
+) as Record<IconName, React.ComponentType<LucideProps>>;
 
 const DynamicIcon = ({ name, ...rest }: IconProps) => {
-  const LucideIcon = dynamic(dynamicIconImports[name]);
+  const LucideIcon = dynamicIcons[name];
 
   return (
     <Suspense fallback={fallback}>

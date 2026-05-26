@@ -4,7 +4,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "ZC/ui/avatar";
 import { createClient } from "ZU/supabase/server";
 
 export default async function Profile() {
-  const supabase = createClient();
+  const supabase = await createClient();
 
   const { data, error } = await supabase.auth.getUser();
   if (error || !data?.user) {
