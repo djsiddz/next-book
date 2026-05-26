@@ -24,19 +24,19 @@ export default function DashboardNav({ email }: { email: string | undefined }) {
       <NavigationMenu className="flex">
         <NavigationMenuList>
           <NavigationMenuItem className="mr-10 flex items-center">
-            <Link href="/dashboard" legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+            <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+              <Link href="/dashboard">
                 <ChevronRightSquareIcon size={36} className="inline" /> <span className="pl-3 text-xl">Next Book</span>
-              </NavigationMenuLink>
-            </Link>
+              </Link>
+            </NavigationMenuLink>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <Link href="/dashboard/my-collection" legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>My Collection</NavigationMenuLink>
-            </Link>
-            <Link href="/dashboard/settings" legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>Settings</NavigationMenuLink>
-            </Link>
+            <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+              <Link href="/dashboard/my-collection">My Collection</Link>
+            </NavigationMenuLink>
+            <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+              <Link href="/dashboard/settings">Settings</Link>
+            </NavigationMenuLink>
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>

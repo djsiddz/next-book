@@ -42,16 +42,16 @@ export default function Nav() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem id="desktop-logo" className="hidden items-center md:visible md:flex">
-          <Link href="/" legacyBehavior passHref>
-            <NavigationMenuLink className={`px-0 md:mr-10 ${navigationMenuTriggerStyle()}`}>
+          <NavigationMenuLink asChild className={`px-0 md:mr-10 ${navigationMenuTriggerStyle()}`}>
+            <Link href="/">
               <ChevronRightSquareIcon size={36} className="inline" /> <span className="pl-3 text-xl">Next Book</span>
-            </NavigationMenuLink>
-          </Link>
+            </Link>
+          </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem id="features-link" className="hidden md:flex">
-          <Link href="#features" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>Features</NavigationMenuLink>
-          </Link>
+          <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+            <Link href="#features">Features</Link>
+          </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem id="resources-links" className="hidden md:flex">
           <NavigationMenuTrigger>Resources</NavigationMenuTrigger>
